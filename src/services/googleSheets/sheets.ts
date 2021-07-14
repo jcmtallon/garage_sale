@@ -8,15 +8,20 @@ import { getDecryptedCredentials } from "./credentialDecryption";
 //so that option was not possible either.
 const credentials = getDecryptedCredentials();
 
+let gapiClient = null;
+
 async function getClient() {
+  if (gapiClient !== null) return gapiClient;
+
   const auth = new google.auth.GoogleAuth({
     credentials: credentials,
     scopes: "https://www.googleapis.com/auth/spreadsheets",
   });
 
   const client = await auth.getClient();
+  gapiClient = google.sheets({ version: "v4", auth: client });
 
-  return google.sheets({ version: "v4", auth: client });
+  return gapiClient;
 }
 
 export const getGoods = async () => {
