@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 
-import styles from "../styles/Home.module.css";
 import { Good } from "../types";
 import { Head } from "../components/Head";
 
@@ -25,28 +23,26 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head />
-
-      <main className={styles.main}>
-        {goods.map((good) => (
-          <div key={good.id}>{good.name_en}</div>
-        ))}
+      <main>
+        <div>Top</div>
+        <div>
+          {goods.map((good) => (
+            <div key={good.id}>
+              <div>{good.name_en}</div>
+              <div>{good.name_jp}</div>
+              <div>{good.description}</div>
+              <div>{good.price_now}</div>
+              <div>{good.size_x}</div>
+              <div>{good.size_y}</div>
+              <div>{good.size_z}</div>
+            </div>
+          ))}
+        </div>
+        <button onClick={postGood}>TEST POST</button>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-      <button onClick={postGood}>TEST POST</button>
+      <footer>Footer</footer>
     </div>
   );
 }
