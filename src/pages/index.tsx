@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { Good } from "../types";
 
 export default function Home() {
-  const [goods, setGoods] = useState([]);
+  const [goods, setGoods] = useState<Good[]>([]);
 
   const postGood = async () => {
     await fetch("/api/goods", {
@@ -33,7 +34,7 @@ export default function Home() {
 
       <main className={styles.main}>
         {goods.map((good) => (
-          <div key={good}>{good[0]}</div>
+          <div key={good.id}>{good.name_en}</div>
         ))}
       </main>
 

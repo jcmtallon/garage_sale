@@ -1,6 +1,8 @@
 import { google } from "googleapis";
+import { Good } from "../../types";
 
 import { getDecryptedCredentials } from "./credentialDecryption";
+import { parseGoodsResponse } from "./parsers";
 
 //Information about why we used a decryption method for
 //passing credentials in: https://leerob.io/blog/vercel-env-variables-size-limit
@@ -9,6 +11,8 @@ import { getDecryptedCredentials } from "./credentialDecryption";
 const credentials = getDecryptedCredentials();
 
 let gapiClient = null;
+
+const goodsSheetName = "goods";
 
 async function getClient() {
   if (gapiClient !== null) return gapiClient;
@@ -24,14 +28,14 @@ async function getClient() {
   return gapiClient;
 }
 
-export const getGoods = async () => {
+export const getGoods = async (): Promise<Good[]> => {
   const sheets = await getClient();
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SHEET_ID,
-    range: `Sheet1!A:B`,
+    range: goodsSheetName,
   });
 
-  return response.data.values;
+  return parseGoodsResponse(response.data.values);
 };
 
 export const addGood = async () => {
