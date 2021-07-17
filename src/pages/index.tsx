@@ -26,7 +26,7 @@ export default function Home() {
     <div>
       <Head />
       <main>
-        <div>Top</div>
+        <div className="bg-gray-100">Top</div>
         <div>
           {goods.map((good) => (
             <div key={good.id}>
