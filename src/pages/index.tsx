@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Good } from "../types";
 import { Head } from "../components/Head";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
+
+  const { t } = useTranslation();
 
   const postGood = async () => {
     await fetch("/api/goods", {
@@ -26,6 +29,7 @@ export default function Home() {
     <div>
       <Head />
       <main>
+        <div>{t("test.test")}</div>
         <div className="bg-gray-100">Top</div>
         <div>
           {goods.map((good) => (

@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "googleapis": "^81.0.0",
+    "i18next": "^20.3.3",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-i18next": "^11.11.3",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
