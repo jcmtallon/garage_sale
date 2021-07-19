@@ -2,19 +2,19 @@ import { Good } from "../../types";
 
 enum GoodDbPropName {
   "id",
+  "date_added",
   "name_en",
   "name_jp",
-  "description",
+  "description_en",
+  "description_jp",
   "category",
-  "state",
+  "status",
   "price_original",
   "price_now",
   "size_x",
   "size_y",
   "size_z",
   "booker_name",
-  "booker_email",
-  "booker_line_id",
 }
 
 export const parseGoodsResponse = (values: any[]): Good[] => {

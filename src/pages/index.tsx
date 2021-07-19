@@ -25,6 +25,8 @@ export default function Home() {
     fetchGoods();
   }, []);
 
+  console.log(goods);
+
   return (
     <div>
       <Head />
@@ -36,7 +38,8 @@ export default function Home() {
             <div key={good.id}>
               <div>{good.name_en}</div>
               <div>{good.name_jp}</div>
-              <div>{good.description}</div>
+              <div>{good.description_en}</div>
+              <div>{good.description_jp}</div>
               <div>{good.price_now}</div>
               <div>{good.size_x}</div>
               <div>{good.size_y}</div>
