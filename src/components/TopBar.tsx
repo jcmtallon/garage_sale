@@ -1,4 +1,8 @@
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
+
+import logoMd from "../../public/logo_md.svg";
+import logo from "../../public/logo.svg";
 
 import { SecondaryButton } from "./elements/SecondaryButton";
 
@@ -19,18 +23,14 @@ export const TopBar = ({ selected = 1 }: OwnProps) => {
       <div className="px-2 md:px-6 max-w-screen-xl m-auto h-full">
         <div className="flex justify-between items-center h-full">
           {/* Desktop logo */}
-          <img
-            src={"logo_md.svg"}
-            alt="Garage Sale Logo"
-            className="hidden md:block"
-          />
+          <div className="hidden md:flex items-center">
+            <Image src={logoMd} alt="Garage Sale Logo" />
+          </div>
 
           {/* Mobile logo */}
-          <img
-            src={"logo.svg"}
-            alt="Garage Sale Logo"
-            className="block md:hidden"
-          />
+          <div className="flex items-center md:hidden">
+            <Image src={logo} alt="Garage Sale Logo" />
+          </div>
 
           <div className="flex items-center space-x-2 md:space-x-6">
             <div>TODO: Language selector</div>
