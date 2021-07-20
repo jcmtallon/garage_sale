@@ -5,7 +5,6 @@ import { LANG } from "./constants/language";
 import { i18nResources } from "./locales";
 
 i18n.use(initReactI18next).init({
-  debug: true,
   resources: i18nResources,
   lng: LANG.EN_US,
   fallbackLng: LANG.EN_US,

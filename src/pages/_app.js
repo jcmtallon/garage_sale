@@ -5,10 +5,13 @@ import "../styles/index.css";
 import { LANG } from "../constants/language";
 
 function MyApp({ Component, pageProps }) {
-  //TODO: select browser language automatically
   useEffect(() => {
-    i18n.changeLanguage(LANG.EN_US);
+    if (!navigator.language) return;
+    const browserLang = navigator.language;
+    if (browserLang === "ja" && browserLang !== "ja-JP")
+      i18n.changeLanguage(LANG.JA_JP);
   }, []);
+
   return <Component {...pageProps} />;
 }
 
