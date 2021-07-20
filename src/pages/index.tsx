@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Good } from "../types";
 import { Head } from "../components/Head";
+import { TopBar } from "../components/TopBar";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
@@ -28,11 +29,10 @@ export default function Home() {
   console.log(goods);
 
   return (
-    <div>
+    <div className="bg-white">
       <Head />
       <main>
-        <div>{t("test.test")}</div>
-        <div className="bg-gray-100">Top</div>
+        <TopBar />
         <div>
           {goods.map((good) => (
             <div key={good.id}>
