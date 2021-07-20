@@ -3,19 +3,26 @@ import Image from "next/image";
 
 import logoMd from "../../public/logo_md.svg";
 import logo from "../../public/logo.svg";
+import flagUk from "../../public/flag_uk.png";
+import flagJapan from "../../public/flag_japan.png";
 
 import { SecondaryButton } from "./elements/SecondaryButton";
+import { LANG } from "../constants/language";
 
 interface OwnProps {
   selected: number;
 }
 
 export const TopBar = ({ selected = 1 }: OwnProps) => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const onBookButtonClick = () => {
     //TODO: click handling.
     alert("Under construction");
+  };
+
+  const onLanguageChangeClick = () => {
+    i18n.changeLanguage(i18n.language === LANG.EN_US ? LANG.JA_JP : LANG.EN_US);
   };
 
   return (
@@ -32,8 +39,18 @@ export const TopBar = ({ selected = 1 }: OwnProps) => {
             <Image src={logo} alt="Garage Sale Logo" />
           </div>
 
-          <div className="flex items-center space-x-2 md:space-x-6">
-            <div>TODO: Language selector</div>
+          <div className="flex items-center space-x-3 md:space-x-6">
+            {/* Language Selector */}
+            <button
+              className="h-8 w-8 hover:bg-primary-400 p-1"
+              onClick={onLanguageChangeClick}
+            >
+              <Image
+                src={i18n.language === LANG.EN_US ? flagUk : flagJapan}
+                alt="Spanish Language"
+                className="rounded-full"
+              />
+            </button>
 
             {/* Desktop counter */}
             <div className="hidden md:block text-primary-50">
