@@ -26,7 +26,7 @@ export const TopBar = ({ selected = 1 }: OwnProps) => {
   };
 
   return (
-    <div className="bg-primary-600 fixed w-full h-12 md:h-14">
+    <div className="bg-primary-600 fixed top-0 w-full h-12 md:h-14">
       <div className="px-2 md:px-6 max-w-screen-xl m-auto h-full">
         <div className="flex justify-between items-center h-full">
           {/* Desktop logo */}

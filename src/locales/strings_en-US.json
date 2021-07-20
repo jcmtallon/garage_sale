@@ -3,5 +3,14 @@
     "topBar.label.itemsSelected_plural": "{{count}} items selected",
     "topBar.label.selected": "{{count}} selected",
     "topBar.botton.bookSelected": "Book Selected",
-    "topBar.botton.book": "Book"
+    "topBar.botton.book": "Book",
+    "statBar.label.itemsAvailable": "items available",
+    "statBar.label.available": "available",
+    "statBar.label.itemsBooked": "items booked",
+    "statBar.label.booked": "booked",
+    "statBar.label.itemsGiven": "items given",
+    "statBar.label.given": "given",
+    "statBar.label.untilDate": "until {{when}}",
+    "statBar.label.daysLeft": "({{count}} day left)",
+    "statBar.label.daysLeft_plural": "({{count}} days left)"
 }

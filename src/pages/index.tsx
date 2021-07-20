@@ -4,11 +4,10 @@ import { useTranslation } from "react-i18next";
 import { Good } from "../types";
 import { Head } from "../components/Head";
 import { TopBar } from "../components/TopBar";
+import { StatsBar } from "../components/pages/home/StatsBar";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
-
-  const { t } = useTranslation();
 
   const postGood = async () => {
     await fetch("/api/goods", {
@@ -26,14 +25,13 @@ export default function Home() {
     fetchGoods();
   }, []);
 
-  console.log(goods);
-
   return (
     <div className="bg-white font-sans text-sm">
       <Head />
       <main>
         <TopBar selected={0} />
         <div>
+          <StatsBar goods={goods} />
           {goods.map((good) => (
             <div key={good.id}>
               <div>{good.name_en}</div>
