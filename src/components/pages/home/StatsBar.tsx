@@ -57,7 +57,7 @@ export const StatsBar = ({ goods = [] }: OwnProps) => {
             />
           </div>
           <div className="flex items-end space-x-2 text-gray-800">
-            <div className="text-xs pb-0.5">
+            <div className="text-xs pb-0.5 hidden md:block">
               {t("statBar.label.untilDate", {
                 when: END_DATE,
                 interpolation: { escapeValue: false },
