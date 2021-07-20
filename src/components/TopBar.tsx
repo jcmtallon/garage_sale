@@ -32,9 +32,18 @@ export const TopBar = ({ selected = 1 }: OwnProps) => {
             className="block md:hidden"
           />
 
-          <div className="flex">
+          <div className="flex items-center space-x-2 md:space-x-6">
             <div>TODO: Language selector</div>
-            <div>TODO: Selected Items counter</div>
+
+            {/* Desktop counter */}
+            <div className="hidden md:block text-primary-50">
+              {t("topBar.label.itemsSelected", { count: selected })}
+            </div>
+
+            {/* Mobile counter */}
+            <div className="block md:hidden text-primary-50">
+              {t("topBar.label.selected", { count: selected })}
+            </div>
 
             {/* Desktop button */}
             <SecondaryButton

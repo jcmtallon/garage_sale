@@ -2,5 +2,5 @@
     "i18n-ally.localesPaths": "src/locales",
     "i18n-ally.pathMatcher": "strings_{locale}.json",
     "i18n-ally.keystyle": "flat",
-    "i18n-ally.sourceLanguage": "en_US",
+    "i18n-ally.sourceLanguage": "en-US",
 }

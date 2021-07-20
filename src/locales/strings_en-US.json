@@ -1,0 +1,7 @@
+{
+    "topBar.label.itemsSelected": "{{count}} item selected",
+    "topBar.label.itemsSelected_plural": "{{count}} items selected",
+    "topBar.label.selected": "{{count}} selected",
+    "topBar.botton.bookSelected": "Book Selected",
+    "topBar.botton.book": "Book"
+}

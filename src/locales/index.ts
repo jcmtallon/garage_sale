@@ -1,7 +1,7 @@
-import en_US from "./strings_en_US.json";
-import ja_JP from "./strings_ja_JP.json";
+import en_US from "./strings_en-US.json";
+import ja_JP from "./strings_ja-JP.json";
 
 export const i18nResources = {
-  en_US: { translation: en_US },
-  ja_JP: { translation: ja_JP },
+  "en-US": { translation: en_US },
+  "ja-JP": { translation: ja_JP },
 };

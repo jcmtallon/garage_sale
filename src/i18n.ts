@@ -10,7 +10,8 @@ i18n.use(initReactI18next).init({
   lng: LANG.EN_US,
   fallbackLng: LANG.EN_US,
   keySeparator: false,
-  whitelist: [LANG.EN_US, LANG.JA_JP],
+  load: "currentOnly",
+  supportedLngs: [LANG.EN_US, LANG.JA_JP],
 });
 
 export default i18n;
