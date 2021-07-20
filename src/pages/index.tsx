@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 import { Good } from "../types";
 import { Head } from "../components/Head";
 import { TopBar } from "../components/TopBar";
 import { HomeStatsBar } from "../components/pages/home/HomeStatsBar";
+import { HomeMainSection } from "../components/pages/home/HomeMainSection";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
@@ -32,18 +32,7 @@ export default function Home() {
         <TopBar selected={0} />
         <div>
           <HomeStatsBar goods={goods} />
-          {goods.map((good) => (
-            <div key={good.id}>
-              <div>{good.name_en}</div>
-              <div>{good.name_jp}</div>
-              <div>{good.description_en}</div>
-              <div>{good.description_jp}</div>
-              <div>{good.price_now}</div>
-              <div>{good.size_x}</div>
-              <div>{good.size_y}</div>
-              <div>{good.size_z}</div>
-            </div>
-          ))}
+          <HomeMainSection goods={goods} />
         </div>
         <button onClick={postGood}>TEST POST</button>
       </main>
