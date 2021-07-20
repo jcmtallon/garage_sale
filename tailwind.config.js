@@ -1,6 +1,18 @@
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx"],
   theme: {
+    fontFamily: {
+      sans: [
+        "-apple-system",
+        "system-ui",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+      ],
+    },
     extend: {
       colors: {
         primary: {

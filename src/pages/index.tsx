@@ -29,10 +29,10 @@ export default function Home() {
   console.log(goods);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white font-sans text-sm">
       <Head />
       <main>
-        <TopBar />
+        <TopBar selected={0} />
         <div>
           {goods.map((good) => (
             <div key={good.id}>
