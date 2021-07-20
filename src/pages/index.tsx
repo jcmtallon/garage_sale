@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Good } from "../types";
 import { Head } from "../components/Head";
 import { TopBar } from "../components/TopBar";
-import { StatsBar } from "../components/pages/home/StatsBar";
+import { HomeStatsBar } from "../components/pages/home/HomeStatsBar";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
@@ -31,7 +31,7 @@ export default function Home() {
       <main>
         <TopBar selected={0} />
         <div>
-          <StatsBar goods={goods} />
+          <HomeStatsBar goods={goods} />
           {goods.map((good) => (
             <div key={good.id}>
               <div>{good.name_en}</div>

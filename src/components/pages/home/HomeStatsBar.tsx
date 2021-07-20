@@ -9,7 +9,7 @@ interface OwnProps {
   goods: Good[];
 }
 
-export const StatsBar = ({ goods = [] }: OwnProps) => {
+export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
   const { t } = useTranslation();
 
   const available = useMemo(
