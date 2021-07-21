@@ -1,14 +1,11 @@
 import React, { ReactNode, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { GoodStatus, GOOD_STATUS } from "../../../constants/goodStatus";
+import { GoodStatus } from "../../../constants/goodStatus";
 import { GOOD_CATEGORY_OPTIONS } from "../../../constants/goodCategoryOptions";
 import { GOOD_TYPE_OPTIONS } from "../../../constants/goodTypeOptions ";
 import { GoodsFilterState } from "../../../types";
-import {
-  getLabeledValueOptions,
-  getLabeledValueOptionsWithAllOption,
-} from "../../../utils/labelUtils";
+import { getLabeledValueOptionsWithAllOption } from "../../../utils/labelUtils";
 import { GroupButtons } from "../../elements/GroupButtons";
 import { SelectBox } from "../../elements/SelectBox";
 import { GOOD_STATUS_OPTIONS } from "../../../constants/goodStatusOptions";
@@ -31,18 +28,18 @@ export const HomeListFilters = ({
 
   const types = useMemo(
     () => getLabeledValueOptionsWithAllOption<GoodType>(GOOD_TYPE_OPTIONS),
-    [GOOD_TYPE_OPTIONS]
+    []
   );
 
   const statuses = useMemo(
     () => getLabeledValueOptionsWithAllOption<GoodStatus>(GOOD_STATUS_OPTIONS),
-    [GOOD_STATUS_OPTIONS]
+    []
   );
 
   const categories = useMemo(
     () =>
       getLabeledValueOptionsWithAllOption<GoodCategory>(GOOD_CATEGORY_OPTIONS),
-    [GOOD_CATEGORY_OPTIONS]
+    []
   );
 
   return (

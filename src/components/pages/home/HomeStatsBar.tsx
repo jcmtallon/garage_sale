@@ -33,7 +33,7 @@ export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
     return Math.round(differenceInDays);
-  }, [END_DATE]);
+  }, []);
 
   return (
     <div className="mt-12 md:mt-14 bg-gray-100 w-full">

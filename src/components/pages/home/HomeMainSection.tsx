@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { Good, GoodsFilterState } from "../../../types";
+import { HomeGoodList } from "./HomeGoodList";
 import { HomeInfoCard } from "./HomeInfoCard";
 import { HomeListFilters } from "./HomeListFilters";
 
@@ -25,18 +26,7 @@ export const HomeMainSection = ({ goods = [] }: OwnProps) => {
         filters={filters}
         updateFilters={(value) => setFilters(value)}
       />
-      {goods.map((good) => (
-        <div key={good.id}>
-          <div>{good.name_en}</div>
-          <div>{good.name_jp}</div>
-          <div>{good.description_en}</div>
-          <div>{good.description_jp}</div>
-          <div>{good.price_now}</div>
-          <div>{good.size_x}</div>
-          <div>{good.size_y}</div>
-          <div>{good.size_z}</div>
-        </div>
-      ))}
+      <HomeGoodList filters={filters} goods={goods} />
     </div>
   );
 };
