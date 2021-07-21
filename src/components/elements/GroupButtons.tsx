@@ -1,10 +1,7 @@
-type GroupButtonProps<T> = {
-  label: string;
-  value: T;
-};
+import { LabeledValueOption } from "../../types";
 
 interface OwnProps<T> {
-  buttons: GroupButtonProps<T>[];
+  buttons: LabeledValueOption<T>[];
   selectedValue: T;
   onClick: (value: T) => void;
 }
