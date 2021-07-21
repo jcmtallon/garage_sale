@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "googleapis": "^81.0.0",
     "i18next": "^20.3.3",
     "next": "11.0.1",

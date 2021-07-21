@@ -14,6 +14,7 @@ import { SelectBox } from "../../elements/SelectBox";
 import { GOOD_STATUS_OPTIONS } from "../../../constants/goodStatusOptions";
 import { GoodType } from "../../../constants/goodType";
 import { GoodCategory } from "../../../constants/goodCategory";
+import { Checkbox } from "../../elements/Checkbox";
 
 interface OwnProps {
   filters: GoodsFilterState;
@@ -66,7 +67,9 @@ export const HomeListFilters = ({
         <FilterSlot label={t("goodsFilters.label.category")}>
           <SelectBox selectedValud={filters.category} options={categories} />
         </FilterSlot>
-        <FilterSlot>wasAddedLastWeek</FilterSlot>
+        <FilterSlot>
+          <Checkbox label="Label text" />
+        </FilterSlot>
       </div>
       <div className="hidden md:block">{goodsCount} items</div>
     </div>
