@@ -14,6 +14,7 @@ enum GoodDbPropName {
   "size_x",
   "size_y",
   "size_z",
+  "public",
   "booker_name",
 }
 
@@ -36,7 +37,7 @@ export const parseGoodsResponse = (values: any[]): Good[] => {
       good[key] = row[propIndexes[key]];
     });
 
-    goods.push(good);
+    if (good.public === "TRUE") goods.push(good);
   });
 
   return goods;

@@ -18,6 +18,7 @@ export type Good = {
   size_x: number;
   size_y: number;
   size_z: number;
+  public: "TRUE" | "FALSE";
   booker_name: string; //TODO: might be better not to include the booker info (just the id) in the response for privacy reasons.
 };
 
