@@ -62,7 +62,7 @@ const BaseButton = ({
 }: BaseButtonProps) => {
   return (
     <button
-      className={`border border-primary-600 px-4 py-2 mx-0 outline-none ${
+      className={`border border-primary-600 px-2.5 md:px-4 py-1.5 md:py-2 mx-0 outline-none ${
         isSelected
           ? "bg-primary-600 text-white"
           : "bg-white text-primary-600 hover:bg-primary-100"
