@@ -65,7 +65,18 @@ export const HomeListFilters = ({
           <SelectBox selectedValud={filters.category} options={categories} />
         </FilterSlot>
         <FilterSlot>
-          <Checkbox label="Label text" />
+          <div className="ml-4">
+            <Checkbox
+              label={t("goodsFilters.label.addedLastWeek")}
+              checked={filters.wasAddedLastWeek}
+              onClick={() =>
+                updateFilters({
+                  ...filters,
+                  wasAddedLastWeek: !filters.wasAddedLastWeek,
+                })
+              }
+            />
+          </div>
         </FilterSlot>
       </div>
       <div className="hidden md:block">{goodsCount} items</div>

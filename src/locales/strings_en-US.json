@@ -18,6 +18,7 @@
     "goodsFilters.label.type": "Type",
     "goodsFilters.label.status": "Status",
     "goodsFilters.label.category": "Category",
+    "goodsFilters.label.addedLastWeek": "Added Last Week",
     "general.option.all": "All",
     "goodType.free": "Free",
     "goodType.paid": "Paid",
