@@ -1,21 +1,13 @@
-import { useMemo } from "react";
-
-import { Good, GoodsFilterState } from "../../../types";
-import { filterGood } from "../../../utils/filterUtils";
+import { Good } from "../../../types";
 
 interface OwnProps {
   goods: Good[];
-  filters: GoodsFilterState;
 }
 
-export const HomeGoodList = ({ goods, filters }: OwnProps) => {
-  const filteredGoods = useMemo(() => {
-    return goods.filter((good) => filterGood(good, filters));
-  }, [goods, filters]);
-
+export const HomeGoodList = ({ goods }: OwnProps) => {
   return (
-    <div className="grid grid-cols-2 gap-4">
-      {filteredGoods.map((good) => (
+    <div className="grid grid-cols-2 gap-4 mt-4">
+      {goods.map((good) => (
         <div key={good.id} className="border p-4">
           <div>{good.name_en}</div>
           <div>{good.name_jp}</div>
