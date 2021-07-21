@@ -26,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-white font-sans text-gray-900 text-sm w-screen">
+    <div className="w-screen bg-white font-sans text-gray-900 text-sm">
       <Head />
       <main>
         <TopBar selected={0} />

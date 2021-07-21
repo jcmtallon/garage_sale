@@ -62,7 +62,17 @@ export const HomeListFilters = ({
         </FilterSlot>
 
         <FilterSlot label={t("goodsFilters.label.category")}>
-          <SelectBox selectedValud={filters.category} options={categories} />
+          <SelectBox
+            selectedValud={filters.category}
+            options={categories}
+            value={filters.category}
+            onChange={(e) =>
+              updateFilters({
+                ...filters,
+                category: e.target.value as GoodCategory,
+              })
+            }
+          />
         </FilterSlot>
         <FilterSlot>
           <div className="ml-24 md:ml-4">

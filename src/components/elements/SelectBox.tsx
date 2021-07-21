@@ -3,7 +3,7 @@ import React from "react";
 import { LabeledValueOption } from "../../types";
 
 interface OwnProps<T = string | number>
-  extends React.ButtonHTMLAttributes<HTMLSelectElement> {
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options: LabeledValueOption<T>[];
   selectedValud?: T;
 }

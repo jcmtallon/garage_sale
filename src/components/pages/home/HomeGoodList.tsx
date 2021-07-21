@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 
 import { Good, GoodsFilterState } from "../../../types";
+import { filterGood } from "../../../utils/filterUtils";
 
 interface OwnProps {
   goods: Good[];
@@ -9,10 +10,8 @@ interface OwnProps {
 
 export const HomeGoodList = ({ goods, filters }: OwnProps) => {
   const filteredGoods = useMemo(() => {
-    return goods.filter((good) => filters.type === "FREE");
+    return goods.filter((good) => filterGood(good, filters));
   }, [goods, filters]);
-
-  console.log(filteredGoods);
 
   return (
     <div className="grid grid-cols-2 gap-4">
