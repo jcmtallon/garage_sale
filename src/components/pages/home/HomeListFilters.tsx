@@ -43,7 +43,7 @@ export const HomeListFilters = ({
   );
 
   return (
-    <div className="flex justify-between items-center my-2">
+    <div className="flex justify-between items-center mt-3">
       <div className="flex flex-wrap">
         <FilterSlot label={t("goodsFilters.label.type")}>
           <GroupButtons
@@ -79,7 +79,7 @@ export const HomeListFilters = ({
           </div>
         </FilterSlot>
       </div>
-      <div className="hidden md:block">{goodsCount} items</div>
+      <div className="hidden md:block mt-4">{goodsCount} items</div>
     </div>
   );
 };
@@ -91,8 +91,10 @@ interface FilterSlotProps {
 
 const FilterSlot = ({ label, children }: FilterSlotProps) => {
   return (
-    <div className="flex wrap flex-nowrap items-center space-x-3 pr-6">
-      {label && <div>{label}</div>}
+    <div className="flex wrap flex-nowrap items-center space-x-3 mr-6 mt-4">
+      {label && (
+        <div className="w-20 md:w-auto pr-4 md:pr-0 text-right">{label}</div>
+      )}
       <div>{children}</div>
     </div>
   );

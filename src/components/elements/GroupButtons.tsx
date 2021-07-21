@@ -12,7 +12,7 @@ export const GroupButtons = <T extends unknown>({
   onClick,
 }: OwnProps<T>) => {
   return (
-    <div>
+    <div className="flex flex-nowrap">
       {buttons.map((btn, index) =>
         index === 0 ? (
           // First Button

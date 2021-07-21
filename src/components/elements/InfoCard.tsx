@@ -16,7 +16,7 @@ export const InfoCard = ({ title, body }: OwnProps) => {
   }
 
   return (
-    <div className="flex bg-yellow-50 border border-yellow-200 p-4 my-3 md:my-4 space-x-0 md:space-x-5">
+    <div className="flex bg-yellow-50 border border-yellow-200 p-4 my-3 md:my-5 space-x-0 md:space-x-5">
       <div className="relative flex-none h-4 w-5 py-4 hidden md:block">
         <Image src={infoIcon} layout="fill" alt="Info Icon" />
       </div>

@@ -11,7 +11,7 @@ interface OwnProps<T = string | number>
 export const SelectBox = ({ options, selectedValud, ...props }: OwnProps) => {
   return (
     <select
-      className={`rounded py-1.5 px-3 border border-green-600 focus:border-gray-900 focus:shadow focus:ring-0 w-full`}
+      className={`rounded py-1.5 pl-3 pr-9 border border-green-600 focus:border-gray-900 focus:shadow focus:ring-0 w-full`}
       value={selectedValud}
       {...props}
     >
