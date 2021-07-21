@@ -14,5 +14,14 @@
     "statBar.label.daysLeft": "({{count}} day left)",
     "statBar.label.daysLeft_plural": "({{count}} days left)",
     "goodsInfoCard.title.helpThem": "Help Juanca and Mariko get rid of their stuff!",
-    "goodsInfoCard.body.description": "Mariko and Juanca are moving back to Spain at the end of this summer and instead of throwing away their stuff and generating more garbage, they would like to give it away and have it reused by other people. Could you help them with that?\n\nTo do it, check out below the list of things we are selling or giving away, select the ones you would like to receive or buy and, click the Book button on the top-right corner to confirm the request. Once we receive your request with your contact details, we will contact you to arrange the place and time when we can pass you the items you selected.\n\nThis sale ends on 2021/08/25. We might continue adding new items every week. Also, some reserved items might become available again, so don’t hesitate to continue checking this site every now and then!"
+    "goodsInfoCard.body.description": "Mariko and Juanca are moving back to Spain at the end of this summer and instead of throwing away their stuff and generating more garbage, they would like to give it away and have it reused by other people. Could you help them with that?\n\nTo do it, check out below the list of things we are selling or giving away, select the ones you would like to receive or buy and, click the Book button on the top-right corner to confirm the request. Once we receive your request with your contact details, we will contact you to arrange the place and time when we can pass you the items you selected.\n\nThis sale ends on 2021/08/25. We might continue adding new items every week. Also, some reserved items might become available again, so don’t hesitate to continue checking this site every now and then!",
+    "goodsFilters.label.type": "Type",
+    "goodsFilters.button.all": "All",
+    "goodsFilters.button.free": "Free",
+    "goodsFilters.button.paid": "Paid",
+    "goodsFilters.label.status": "Status",
+    "goodsFilters.button.available": "Available",
+    "goodsFilters.button.reserved": "Booked",
+    "goodsFilters.button.given": "Given"
+
 }

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { END_DATE } from "../../../constants/endDate";
-import { STATUS } from "../../../constants/status";
+import { GOOD_STATUS } from "../../../constants/goodStatus";
 import { Good } from "../../../types";
 
 interface OwnProps {
@@ -13,15 +13,15 @@ export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
   const { t } = useTranslation();
 
   const available = useMemo(
-    () => goods.filter((good) => good.status === STATUS.RESERVED).length,
+    () => goods.filter((good) => good.status === GOOD_STATUS.RESERVED).length,
     [goods]
   );
   const reserved = useMemo(
-    () => goods.filter((good) => good.status === STATUS.AVAILABLE).length,
+    () => goods.filter((good) => good.status === GOOD_STATUS.AVAILABLE).length,
     [goods]
   );
   const given = useMemo(
-    () => goods.filter((good) => good.status === STATUS.GIVEN).length,
+    () => goods.filter((good) => good.status === GOOD_STATUS.GIVEN).length,
     [goods]
   );
 
