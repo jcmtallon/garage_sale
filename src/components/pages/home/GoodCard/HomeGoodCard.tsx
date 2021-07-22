@@ -6,6 +6,7 @@ import { HomeGoodCardCategory } from "./HomeGoodCardCategory";
 import { HomeGoodCardDescription } from "./HomeGoodCardDescription";
 import { HomeGoodCardDetailsLink } from "./HomeGoodCardDetailsLink";
 import { HomeGoodCardMeasurements } from "./HomeGoodCardMeasurements";
+import { HomeGoodCardSelectButton } from "./HomeGoodCardSelectButton";
 import { HomeGoodCardStatusBadge } from "./HomeGoodCardStatusBadge";
 import { HomeGoodCardThumbnail } from "./HomeGoodCardThumbnail";
 import { HomeGooodCardTitle } from "./HomeGooodCardTitle";
@@ -26,12 +27,10 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
       {/* Card Right Side */}
       <div className="pl-4 flex flex-col flex-grow">
         <HomeGooodCardTitle nameEn={data.name_en} nameJp={data.name_jp} />
-
         <HomeGoodCardCategory
           category={data.category}
           selectCategory={selectCategory}
         />
-
         <HomeGoodCardDescription
           descriptionEn={data.description_en}
           descriptionJp={data.description_jp}
@@ -47,19 +46,15 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
                 sizeY={data.size_y}
                 sizeZ={data.size_z}
               />
-
               <HomeGoodCardDetailsLink />
             </div>
           </div>
 
           {/* Lower Right Side */}
-          <div>
-            {/* Price data */}
+          <div className="flex flex-col items-end justify-end">
             <div>{data.price_now}</div>
             <div>{data.price_original}</div>
-
-            {/* Select button */}
-            <div>SELECT</div>
+            <HomeGoodCardSelectButton />
           </div>
         </div>
       </div>
