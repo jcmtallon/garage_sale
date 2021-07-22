@@ -23,7 +23,10 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
 
   return (
     <div className={`border border-gray-300 rounded p-4 flex flex-none`}>
-      <HomeGoodCardThumbnail imageId={data.image_id} />
+      {/* Card Left Side */}
+      <div className="flex-none w-32">
+        <HomeGoodCardThumbnail imageId={data.image_id} />
+      </div>
 
       <div className="pl-4 flex-grow flex flex-col">
         {/* Title */}
