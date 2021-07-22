@@ -44,15 +44,15 @@ export const HomeGoodCard = ({
 
   return (
     <div
-      className={`border rounded h-56 p-3.5 flex flex-none ${getCardStyles()}`}
+      className={`border rounded h-56 p-1.5 md:p-3.5 flex flex-none ${getCardStyles()}`}
     >
       {/* Card Left Side */}
-      <div className="flex-none w-32 h-full">
+      <div className="flex-none w-28 md:w-32 h-full">
         <HomeGoodCardThumbnail imageId={data.image_id} />
       </div>
 
       {/* Card Right Side */}
-      <div className="pl-4 flex flex-col flex-grow">
+      <div className="pl-2.5 md:pl-4 pr-1 md:pr-0 flex flex-col flex-grow">
         <HomeGooodCardTitle nameEn={data.name_en} nameJp={data.name_jp} />
         <HomeGoodCardCategory
           category={data.category}

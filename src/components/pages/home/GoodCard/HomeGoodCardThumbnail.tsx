@@ -10,6 +10,7 @@ export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
       <Image
         src={`https://drive.google.com/uc?export=view&id=${imageId}`}
         layout="fill"
+        objectFit="cover"
         alt="Item thumbnail"
         className="rounded bg-gray-50 shadow-inner cursor-pointer"
       />

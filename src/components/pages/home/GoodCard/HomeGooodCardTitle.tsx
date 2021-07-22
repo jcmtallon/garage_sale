@@ -11,7 +11,7 @@ export const HomeGooodCardTitle = ({ nameEn, nameJp }: OwnProps) => {
   const { i18n } = useTranslation();
 
   return (
-    <div className="text-base font-bold text-primary-600">
+    <div className="text-base font-bold text-primary-600 truncate">
       {i18n.language === LANG.EN_US ? nameEn : nameJp}
     </div>
   );
