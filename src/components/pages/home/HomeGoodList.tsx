@@ -1,23 +1,25 @@
+import React from "react";
+import { GoodCategory } from "../../../constants/goodCategory";
+
 import { Good } from "../../../types";
+import { HomeGoodCard } from "./HomeGoodCard";
 
 interface OwnProps {
   goods: Good[];
+  selectCategory: (cat: GoodCategory) => void;
 }
 
-export const HomeGoodList = ({ goods }: OwnProps) => {
+export const HomeGoodList = ({ goods, selectCategory }: OwnProps) => {
   return (
-    <div className="grid grid-cols-2 gap-4 mt-4">
+    <div className="grid gird-cols-1 md:grid-cols-2 gap-4 mt-4">
+      {/* TODO: if no results, show no result message.  */}
+      {/* TODO: if loading, show loading spinner */}
       {goods.map((good) => (
-        <div key={good.id} className="border p-4">
-          <div>{good.name_en}</div>
-          <div>{good.name_jp}</div>
-          <div>{good.description_en}</div>
-          <div>{good.description_jp}</div>
-          <div>{good.price_now}</div>
-          <div>{good.size_x}</div>
-          <div>{good.size_y}</div>
-          <div>{good.size_z}</div>
-        </div>
+        <HomeGoodCard
+          key={good.id}
+          data={good}
+          selectCategory={selectCategory}
+        />
       ))}
     </div>
   );

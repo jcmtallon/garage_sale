@@ -10,7 +10,7 @@ import { GroupButtons } from "../../elements/GroupButtons";
 import { SelectBox } from "../../elements/SelectBox";
 import { GOOD_STATUS_OPTIONS } from "../../../constants/goodStatusOptions";
 import { GoodType } from "../../../constants/goodType";
-import { GoodCategory } from "../../../constants/goodCategory";
+import { GoodCategory, GOOD_CATEGORY } from "../../../constants/goodCategory";
 import { Checkbox } from "../../elements/Checkbox";
 
 interface OwnProps {
@@ -69,7 +69,10 @@ export const HomeListFilters = ({
             onChange={(e) =>
               updateFilters({
                 ...filters,
-                category: e.target.value as GoodCategory,
+                category:
+                  e.target.value in GOOD_CATEGORY
+                    ? (e.target.value as GoodCategory)
+                    : undefined,
               })
             }
           />

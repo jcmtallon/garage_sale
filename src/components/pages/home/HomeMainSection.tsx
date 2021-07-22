@@ -32,7 +32,12 @@ export const HomeMainSection = ({ goods = [] }: OwnProps) => {
         updateFilters={(value) => setFilters(value)}
         goodsCount={filteredGoods.length}
       />
-      <HomeGoodList goods={filteredGoods} />
+      <HomeGoodList
+        goods={filteredGoods}
+        selectCategory={(cat) =>
+          setFilters((prev) => ({ ...prev, category: cat }))
+        }
+      />
     </div>
   );
 };
