@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
-import rulerIcon from "../../../../public/ruler.svg";
-import { GoodCategory } from "../../../constants/goodCategory";
-import { GOOD_STATUS_COLORS } from "../../../constants/goodStatusOptions";
-import { LANG } from "../../../constants/language";
-import { Good } from "../../../types";
+import rulerIcon from "../../../../../public/ruler.svg";
+import { GoodCategory } from "../../../../constants/goodCategory";
+import { GOOD_STATUS_COLORS } from "../../../../constants/goodStatusOptions";
+import { LANG } from "../../../../constants/language";
+import { Good } from "../../../../types";
 import {
   getCategoryLabel,
   getGoodStatusLabel,
-} from "../../../utils/labelUtils";
+} from "../../../../utils/labelUtils";
 
 interface OwnProps {
   data: Good;

@@ -2,7 +2,7 @@ import React from "react";
 import { GoodCategory } from "../../../constants/goodCategory";
 
 import { Good } from "../../../types";
-import { HomeGoodCard } from "./HomeGoodCard";
+import { HomeGoodCard } from "./GoodCard/HomeGoodCard";
 
 interface OwnProps {
   goods: Good[];
