@@ -35,7 +35,12 @@ export const parseGoodsResponse = (values: any[]): Good[] => {
   tableRows.forEach((row) => {
     const good = <Good>{};
     Object.keys(propIndexes).forEach((key) => {
-      good[key] = row[propIndexes[key]];
+      const value = row[propIndexes[key]];
+
+      //TODO: think a easier to mantain design for this.
+      good[key] = ["price_original", "price_now"].includes(key)
+        ? parseInt(value, 10)
+        : value;
     });
 
     if (good.public === "TRUE") goods.push(good);

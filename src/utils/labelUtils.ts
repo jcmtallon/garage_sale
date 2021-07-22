@@ -37,3 +37,11 @@ export const getGoodStatusLabel = (status: GoodStatus) => {
   ).labelKey;
   return i18n.t(labelKey);
 };
+
+export const getJPYFormat = (amount: number): string => {
+  return `¥${amount.toLocaleString("ja-JP")}`;
+};
+
+export const getDiscount = (sale, original): string => {
+  return `${-Math.round(((sale - original) / original) * 100)}%`;
+};

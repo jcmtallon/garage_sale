@@ -6,6 +6,7 @@ import { HomeGoodCardCategory } from "./HomeGoodCardCategory";
 import { HomeGoodCardDescription } from "./HomeGoodCardDescription";
 import { HomeGoodCardDetailsLink } from "./HomeGoodCardDetailsLink";
 import { HomeGoodCardMeasurements } from "./HomeGoodCardMeasurements";
+import { HomeGoodCardPrice } from "./HomeGoodCardPrice";
 import { HomeGoodCardSelectButton } from "./HomeGoodCardSelectButton";
 import { HomeGoodCardStatusBadge } from "./HomeGoodCardStatusBadge";
 import { HomeGoodCardThumbnail } from "./HomeGoodCardThumbnail";
@@ -51,9 +52,11 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
           </div>
 
           {/* Lower Right Side */}
-          <div className="flex flex-col items-end justify-end">
-            <div>{data.price_now}</div>
-            <div>{data.price_original}</div>
+          <div className="flex flex-col items-end justify-end space-y-2">
+            <HomeGoodCardPrice
+              priceNow={data.price_now}
+              priceOriginal={data.price_original}
+            />
             <HomeGoodCardSelectButton />
           </div>
         </div>
