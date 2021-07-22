@@ -24,7 +24,7 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
       </div>
 
       {/* Card Right Side */}
-      <div className="pl-4 flex-grow flex flex-col">
+      <div className="pl-4 flex flex-col flex-grow">
         <HomeGooodCardTitle nameEn={data.name_en} nameJp={data.name_jp} />
 
         <HomeGoodCardCategory
