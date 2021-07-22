@@ -9,7 +9,7 @@ interface OwnProps {
 export const HomeGoodCardStatusBadge = ({ status }: OwnProps) => {
   return (
     <div
-      className="flex-none inline-block text-xs text-white tracking-wide px-1.5 pt-0.5 pb-1 mb-3 rounded-r-lg rounded-tl-lg"
+      className="w-min text-xs text-white tracking-wide pl-1.5 pr-2 pt-0.5 pb-1 rounded-r-lg rounded-tl-lg"
       style={{ backgroundColor: GOOD_STATUS_COLORS[status] }}
     >
       {getGoodStatusLabel(status)}

@@ -17,7 +17,7 @@ interface OwnProps {
 
 export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
   return (
-    <div className={`border border-gray-300 rounded h-56 p-4 flex flex-none`}>
+    <div className={`border border-gray-300 rounded h-56 p-3.5 flex flex-none`}>
       {/* Card Left Side */}
       <div className="flex-none w-32 h-full">
         <HomeGoodCardThumbnail imageId={data.image_id} />
@@ -39,15 +39,17 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
 
         <div className="flex justify-between mt-1.5 flex-grow">
           {/* Lower Left Side */}
-          <div className="flex flex-col">
+          <div className="flex flex-col justify-between">
             <HomeGoodCardStatusBadge status={data.status} />
-            <HomeGoodCardMeasurements
-              sizeX={data.size_x}
-              sizeY={data.size_y}
-              sizeZ={data.size_z}
-            />
+            <div>
+              <HomeGoodCardMeasurements
+                sizeX={data.size_x}
+                sizeY={data.size_y}
+                sizeZ={data.size_z}
+              />
 
-            <HomeGoodCardDetailsLink />
+              <HomeGoodCardDetailsLink />
+            </div>
           </div>
 
           {/* Lower Right Side */}
