@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 import rulerIcon from "../../../../../public/ruler.svg";
@@ -10,6 +11,7 @@ import {
   getCategoryLabel,
   getGoodStatusLabel,
 } from "../../../../utils/labelUtils";
+import { HomeGoodCardThumbnail } from "./HomeGoodCardThumbnail";
 
 interface OwnProps {
   data: Good;
@@ -21,16 +23,8 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
 
   return (
     <div className={`border border-gray-300 rounded p-4 flex flex-none`}>
-      {/* Thumbnail */}
-      <div className="flex-none w-32">
-        <Image
-          src={`https://drive.google.com/uc?export=view&id=${data.image_id}`}
-          width={544}
-          height={816}
-          alt="Item thumbnail"
-          className="rounded bg-gray-50 shadow-inner cursor-pointer"
-        />
-      </div>
+      <HomeGoodCardThumbnail imageId={data.image_id} />
+
       <div className="pl-4 flex-grow flex flex-col">
         {/* Title */}
         <div className="text-lg font-bold text-primary-600">
