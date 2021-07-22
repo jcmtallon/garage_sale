@@ -15,6 +15,10 @@ export const HomeGoodList = ({
   selectCategory,
   selectItem,
 }: OwnProps) => {
+  if (goods.length === 0) {
+    return <div>No results</div>;
+  }
+
   return (
     <div className="grid gird-cols-1 md:grid-cols-2 gap-4 mt-4">
       {/* TODO: if no results, show no result message.  */}

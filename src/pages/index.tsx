@@ -5,6 +5,7 @@ import { Head } from "../components/Head";
 import { TopBar } from "../components/TopBar";
 import { HomeStatsBar } from "../components/pages/home/HomeStatsBar";
 import { HomeMainSection } from "../components/pages/home/HomeMainSection";
+import { SiteFooter } from "../components/SiteFooter";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
@@ -35,9 +36,9 @@ export default function Home() {
   };
 
   return (
-    <div className="w-screen bg-white font-sans text-gray-900 text-sm">
+    <div className="w-screen bg-white font-sans text-gray-900 text-sm h-screen flex flex-col">
       <Head />
-      <main>
+      <main className="flex-grow">
         <TopBar selected={selected.length} />
         <div>
           <HomeStatsBar goods={goods} />
@@ -47,9 +48,8 @@ export default function Home() {
             selectItem={selectItem}
           />
         </div>
-        <button onClick={postGood}>TEST POST</button>
       </main>
-      <footer>Footer</footer>
+      <SiteFooter />
     </div>
   );
 }

@@ -34,7 +34,7 @@ export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
   }, []);
 
   return (
-    <div className="mt-12 md:mt-14 bg-gray-100 w-screen">
+    <div className="pt-12 md:pt-14 bg-gray-100 w-screen">
       <div className="px-2 md:px-6 max-w-screen-xl m-auto">
         <div className="flex justify-between items-center">
           <div className="flex space-x-3 md:space-x-6">
