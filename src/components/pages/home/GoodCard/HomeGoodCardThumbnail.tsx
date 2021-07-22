@@ -6,12 +6,13 @@ interface OwnProps {
 
 export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
   return (
-    <Image
-      src={`https://drive.google.com/uc?export=view&id=${imageId}`}
-      width={544}
-      height={816}
-      alt="Item thumbnail"
-      className="rounded bg-gray-50 shadow-inner cursor-pointer"
-    />
+    <div className="relative w-full h-full">
+      <Image
+        src={`https://drive.google.com/uc?export=view&id=${imageId}`}
+        layout="fill"
+        alt="Item thumbnail"
+        className="rounded bg-gray-50 shadow-inner cursor-pointer"
+      />
+    </div>
   );
 };

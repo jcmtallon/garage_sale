@@ -17,9 +17,9 @@ interface OwnProps {
 
 export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
   return (
-    <div className={`border border-gray-300 rounded p-4 flex flex-none`}>
+    <div className={`border border-gray-300 rounded h-56 p-4 flex flex-none`}>
       {/* Card Left Side */}
-      <div className="flex-none w-32">
+      <div className="flex-none w-32 h-full">
         <HomeGoodCardThumbnail imageId={data.image_id} />
       </div>
 
