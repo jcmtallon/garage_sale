@@ -20,6 +20,7 @@ export type Good = {
   size_y: number;
   size_z: number;
   public: "TRUE" | "FALSE";
+  isSelected?: boolean; //TODO: this belongs to the UI. Maybe better to put together a different type for this.
   booker_name: string; //TODO: might be better not to include the booker info (just the id) in the response for privacy reasons.
 };
 

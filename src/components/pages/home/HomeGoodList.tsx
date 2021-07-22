@@ -7,9 +7,14 @@ import { HomeGoodCard } from "./GoodCard/HomeGoodCard";
 interface OwnProps {
   goods: Good[];
   selectCategory: (cat: GoodCategory) => void;
+  selectItem: (id: number) => void;
 }
 
-export const HomeGoodList = ({ goods, selectCategory }: OwnProps) => {
+export const HomeGoodList = ({
+  goods,
+  selectCategory,
+  selectItem,
+}: OwnProps) => {
   return (
     <div className="grid gird-cols-1 md:grid-cols-2 gap-4 mt-4">
       {/* TODO: if no results, show no result message.  */}
@@ -19,6 +24,7 @@ export const HomeGoodList = ({ goods, selectCategory }: OwnProps) => {
           key={good.id}
           data={good}
           selectCategory={selectCategory}
+          selectItem={selectItem}
         />
       ))}
     </div>

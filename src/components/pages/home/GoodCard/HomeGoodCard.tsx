@@ -1,6 +1,7 @@
 import React from "react";
 
 import { GoodCategory } from "../../../../constants/goodCategory";
+import { GOOD_STATUS } from "../../../../constants/goodStatus";
 import { Good } from "../../../../types";
 import { HomeGoodCardCategory } from "./HomeGoodCardCategory";
 import { HomeGoodCardDescription } from "./HomeGoodCardDescription";
@@ -15,11 +16,36 @@ import { HomeGooodCardTitle } from "./HomeGooodCardTitle";
 interface OwnProps {
   data: Good;
   selectCategory: (cat: GoodCategory) => void;
+  selectItem: (id: number) => void;
 }
 
-export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
+//TODO useMemoization (?)
+
+export const HomeGoodCard = ({
+  data,
+  selectCategory,
+  selectItem,
+}: OwnProps) => {
+  const getCardStyles = () => {
+    if (data.isSelected) {
+      return "border-primary-600 bg-primary-100 shadow-lg";
+    }
+
+    if (data.status === GOOD_STATUS.RESERVED) {
+      return "border-gray-300 bg-blue-100";
+    }
+
+    if (data.status === GOOD_STATUS.GIVEN) {
+      return "border-gray-300 bg-gray-300 opacity-20";
+    }
+
+    return "border-gray-300";
+  };
+
   return (
-    <div className={`border border-gray-300 rounded h-56 p-3.5 flex flex-none`}>
+    <div
+      className={`border rounded h-56 p-3.5 flex flex-none ${getCardStyles()}`}
+    >
       {/* Card Left Side */}
       <div className="flex-none w-32 h-full">
         <HomeGoodCardThumbnail imageId={data.image_id} />
@@ -57,7 +83,13 @@ export const HomeGoodCard = ({ data, selectCategory }: OwnProps) => {
               priceNow={data.price_now}
               priceOriginal={data.price_original}
             />
-            <HomeGoodCardSelectButton />
+            {data.status === GOOD_STATUS.AVAILABLE && (
+              <HomeGoodCardSelectButton
+                id={data.id}
+                selectItem={selectItem}
+                isSelected={data.isSelected}
+              />
+            )}
           </div>
         </div>
       </div>

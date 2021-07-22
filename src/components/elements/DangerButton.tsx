@@ -5,11 +5,11 @@ interface OwnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-export const PrimaryButton = ({ children, className, ...props }: OwnProps) => {
+export const DangerButton = ({ children, className, ...props }: OwnProps) => {
   return (
     <button
-      className={`bg-primary-600 rounded px-4 pt-1.5 pb-2 leading-3 text-white ${
-        props.disabled ? "opacity-50 cursor-default" : "hover:bg-primary-500"
+      className={`bg-yellow-700 rounded px-4 pt-1.5 pb-2 leading-3 text-white ${
+        props.disabled ? "opacity-50 cursor-default" : "hover:bg-yellow-600"
       } ${className}`}
       {...props}
     >

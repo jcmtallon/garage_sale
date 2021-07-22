@@ -9,6 +9,6 @@ export const GOOD_STATUS_OPTIONS: ConstantValueOptions<GoodStatus> = [
 
 export const GOOD_STATUS_COLORS = {
   AVAILABLE: "#4FD37C",
-  RESERVED: "#E95516",
-  GIVEN: "#431400",
+  RESERVED: "#2563EB",
+  GIVEN: "#4B5563",
 } as const;
