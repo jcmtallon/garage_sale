@@ -15,25 +15,22 @@ const filtersInit: GoodsFilterState = {
 
 interface OwnProps {
   goods: Good[];
+  selected: number[];
+  selectItem: (id: number) => void;
 }
 
-export const HomeMainSection = ({ goods = [] }: OwnProps) => {
+export const HomeMainSection = ({
+  goods = [],
+  selected = [],
+  selectItem,
+}: OwnProps) => {
   const [filters, setFilters] = useState<GoodsFilterState>(filtersInit);
-  const [selected, setSelected] = useState<number[]>([]);
 
   const filteredGoods = useMemo(() => {
     return goods
       .filter((good) => filterGood(good, filters))
       .map((g) => ({ ...g, isSelected: selected.includes(g.id) }));
   }, [goods, filters, selected]);
-
-  const selectItem = (id: number) => {
-    if (selected.includes(id)) {
-      setSelected((prev) => prev.filter((val) => val !== id));
-    } else {
-      setSelected((prev) => [...prev, id]);
-    }
-  };
 
   return (
     <div className="px-2 md:px-6 max-w-screen-xl m-auto">

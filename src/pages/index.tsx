@@ -8,6 +8,7 @@ import { HomeMainSection } from "../components/pages/home/HomeMainSection";
 
 export default function Home() {
   const [goods, setGoods] = useState<Good[]>([]);
+  const [selected, setSelected] = useState<number[]>([]);
 
   const postGood = async () => {
     await fetch("/api/goods", {
@@ -25,14 +26,26 @@ export default function Home() {
     fetchGoods();
   }, []);
 
+  const selectItem = (id: number) => {
+    if (selected.includes(id)) {
+      setSelected((prev) => prev.filter((val) => val !== id));
+    } else {
+      setSelected((prev) => [...prev, id]);
+    }
+  };
+
   return (
     <div className="w-screen bg-white font-sans text-gray-900 text-sm">
       <Head />
       <main>
-        <TopBar selected={0} />
+        <TopBar selected={selected.length} />
         <div>
           <HomeStatsBar goods={goods} />
-          <HomeMainSection goods={goods} />
+          <HomeMainSection
+            goods={goods}
+            selected={selected}
+            selectItem={selectItem}
+          />
         </div>
         <button onClick={postGood}>TEST POST</button>
       </main>
