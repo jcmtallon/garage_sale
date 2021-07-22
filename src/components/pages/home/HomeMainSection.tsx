@@ -33,20 +33,24 @@ export const HomeMainSection = ({
   }, [goods, filters, selected]);
 
   return (
-    <div className="px-2 md:px-6 max-w-screen-xl m-auto">
-      <HomeInfoCard />
+    <div className="px-2 md:px-6 max-w-screen-xl m-auto h-full flex flex-col">
+      <div className="py-3 md:py-5">
+        <HomeInfoCard />
+      </div>
       <HomeListFilters
         filters={filters}
         updateFilters={(value) => setFilters(value)}
         goodsCount={filteredGoods.length}
       />
-      <HomeGoodList
-        goods={filteredGoods}
-        selectCategory={(cat) =>
-          setFilters((prev) => ({ ...prev, category: cat }))
-        }
-        selectItem={selectItem}
-      />
+      <div className="flex-grow">
+        <HomeGoodList
+          goods={filteredGoods}
+          selectCategory={(cat) =>
+            setFilters((prev) => ({ ...prev, category: cat }))
+          }
+          selectItem={selectItem}
+        />
+      </div>
     </div>
   );
 };

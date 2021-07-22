@@ -40,13 +40,15 @@ export default function Home() {
       <Head />
       <main className="flex-grow">
         <TopBar selected={selected.length} />
-        <div>
+        <div className="h-full flex flex-col">
           <HomeStatsBar goods={goods} />
-          <HomeMainSection
-            goods={goods}
-            selected={selected}
-            selectItem={selectItem}
-          />
+          <div className="flex-grow">
+            <HomeMainSection
+              goods={goods}
+              selected={selected}
+              selectItem={selectItem}
+            />
+          </div>
         </div>
       </main>
       <SiteFooter />

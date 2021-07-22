@@ -22,6 +22,7 @@
     "goodsFilters.label.status": "Status",
     "goodsFilters.label.category": "Category",
     "goodsFilters.label.addedLastWeek": "Added Last Week",
+    "goodsSearch.label.noResults": "No results for this search",
     "general.option.all": "All",
     "goodType.free": "Free",
     "goodType.paid": "Paid",
