@@ -1,0 +1,50 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import Image from "next/image";
+
+import closeIcon from "../../../../../public/close.svg";
+import { LANG } from "../../../../constants/language";
+import { Good } from "../../../../types";
+import { Modal } from "../../../overlays/modal";
+
+interface OwnProps {
+  good: Good;
+  onClose: () => void;
+}
+
+export const HomeGoodCardModal = ({ good, onClose }: OwnProps) => {
+  const { i18n } = useTranslation();
+
+  const onCloseButton = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+    onClose();
+  };
+
+  return (
+    <Modal onClose={onClose}>
+      <div className="border-0 rounded-lg shadow-lg flex flex-col bg-white w-screen md:w-96 p-4">
+        <div className="flex justify-between">
+          <div className="text-base font-bold text-primary-600">
+            {i18n.language === LANG.EN_US ? good.name_en : good.name_jp}
+          </div>
+          <div className="w-3 cursor-pointer" onClick={onCloseButton}>
+            <Image src={closeIcon} width={240} height={240} alt="Close icon" />
+          </div>
+        </div>
+        <div className="relative w-full pt-2">
+          <Image
+            src={`https://drive.google.com/uc?export=view&id=${good.image_id}`}
+            width={544}
+            height={816}
+            className="rounded bg-gray-50 shadow-inner cursor-pointer"
+          />
+        </div>
+        <div>
+          {i18n.language === LANG.EN_US
+            ? good.description_en
+            : good.description_jp}
+        </div>
+      </div>
+    </Modal>
+  );
+};

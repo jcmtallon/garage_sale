@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
@@ -7,6 +7,7 @@ import noResultsIcon from "../../../../public/no-results.svg";
 import { GoodCategory } from "../../../constants/goodCategory";
 import { HomeGoodCard } from "./GoodCard/HomeGoodCard";
 import { LoadingSpinner } from "../../LoadingSpinner";
+import { HomeGoodCardModal } from "./GoodCard/HomeGoodCardModal";
 
 interface OwnProps {
   goods: Good[];
@@ -21,6 +22,19 @@ export const HomeGoodList = ({
   selectCategory,
   selectItem,
 }: OwnProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalGood, setModalGood] = useState<Good>();
+
+  const onModalClose = () => {
+    setIsModalOpen(false);
+    setModalGood(undefined);
+  };
+
+  const onOpenModal = (good: Good) => {
+    setModalGood(good);
+    setIsModalOpen(true);
+  };
+
   const { t } = useTranslation();
 
   if (isLoading) {
@@ -50,16 +64,21 @@ export const HomeGoodList = ({
   }
 
   return (
-    <div className="grid gird-cols-1 md:grid-cols-2 gap-4 pt-6">
-      {/* TODO: if loading, show loading spinner */}
-      {goods.map((good) => (
-        <HomeGoodCard
-          key={good.id}
-          data={good}
-          selectCategory={selectCategory}
-          selectItem={selectItem}
-        />
-      ))}
-    </div>
+    <>
+      <div className="grid gird-cols-1 md:grid-cols-2 gap-4 pt-6">
+        {goods.map((good) => (
+          <HomeGoodCard
+            key={good.id}
+            data={good}
+            selectCategory={selectCategory}
+            selectItem={selectItem}
+            openModal={onOpenModal}
+          />
+        ))}
+      </div>
+      {isModalOpen && (
+        <HomeGoodCardModal onClose={onModalClose} good={modalGood} />
+      )}
+    </>
   );
 };
