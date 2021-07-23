@@ -1,7 +1,7 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
+import { useTranslation } from "react-i18next";
 import closeIcon from "../../../../../public/close.svg";
 import { LANG } from "../../../../constants/language";
 import { Good } from "../../../../types";
@@ -39,7 +39,7 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
             className="rounded bg-gray-50 shadow-inner cursor-pointer"
           />
         </div>
-        <div>
+        <div className="py-2">
           {i18n.language === LANG.EN_US
             ? good.description_en
             : good.description_jp}

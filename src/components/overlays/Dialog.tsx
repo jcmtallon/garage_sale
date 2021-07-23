@@ -12,7 +12,7 @@ export const Dialog = ({ children, onClose }: OwnProps) => {
 
   return (
     <>
-      <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+      <div className="flex justify-center w-screen items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
         <div ref={ref} className="relative w-auto mx-auto my-6 max-w-8xl">
           {children}
         </div>
