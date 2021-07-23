@@ -7,7 +7,7 @@ interface OwnProps {
   children?: ReactNode;
 }
 
-export const Modal = ({ children, onClose }: OwnProps) => {
+export const Dialog = ({ children, onClose }: OwnProps) => {
   const ref = useClickOutsideListenerRef(onClose);
 
   return (

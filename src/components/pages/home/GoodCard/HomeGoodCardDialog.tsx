@@ -5,14 +5,14 @@ import Image from "next/image";
 import closeIcon from "../../../../../public/close.svg";
 import { LANG } from "../../../../constants/language";
 import { Good } from "../../../../types";
-import { Modal } from "../../../overlays/modal";
+import { Dialog } from "../../../overlays/Dialog";
 
 interface OwnProps {
   good: Good;
   onClose: () => void;
 }
 
-export const HomeGoodCardModal = ({ good, onClose }: OwnProps) => {
+export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
   const { i18n } = useTranslation();
 
   const onCloseButton = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -21,7 +21,7 @@ export const HomeGoodCardModal = ({ good, onClose }: OwnProps) => {
   };
 
   return (
-    <Modal onClose={onClose}>
+    <Dialog onClose={onClose}>
       <div className="border-0 rounded-lg shadow-lg flex flex-col bg-white w-screen md:w-96 p-4">
         <div className="flex justify-between">
           <div className="text-base font-bold text-primary-600">
@@ -45,6 +45,6 @@ export const HomeGoodCardModal = ({ good, onClose }: OwnProps) => {
             : good.description_jp}
         </div>
       </div>
-    </Modal>
+    </Dialog>
   );
 };

@@ -7,7 +7,7 @@ import noResultsIcon from "../../../../public/no-results.svg";
 import { GoodCategory } from "../../../constants/goodCategory";
 import { HomeGoodCard } from "./GoodCard/HomeGoodCard";
 import { LoadingSpinner } from "../../LoadingSpinner";
-import { HomeGoodCardModal } from "./GoodCard/HomeGoodCardModal";
+import { HomeGoodCardDialog } from "./GoodCard/HomeGoodCardDialog";
 
 interface OwnProps {
   goods: Good[];
@@ -77,7 +77,7 @@ export const HomeGoodList = ({
         ))}
       </div>
       {isModalOpen && (
-        <HomeGoodCardModal onClose={onModalClose} good={modalGood} />
+        <HomeGoodCardDialog onClose={onModalClose} good={modalGood} />
       )}
     </>
   );
