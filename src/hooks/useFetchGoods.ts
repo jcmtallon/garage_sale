@@ -9,11 +9,17 @@ export const useFetchGoods = () => {
 
   useEffect(() => {
     const fetchGoods = async () => {
-      const res = await axiosInstance.get(`goods`);
-      const goods = await res.data;
+      try {
+        const res = await axiosInstance.get(`goods`);
+        const goods = await res.data;
 
-      setGoods(goods);
-      setIsLoading(false);
+        setGoods(goods);
+      } catch (error) {
+        setGoods([]);
+        alert("Unexpected error. Please refresh the browser and try again");
+      } finally {
+        setIsLoading(false);
+      }
     };
 
     setIsLoading(true);
