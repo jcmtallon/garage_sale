@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { Good } from "../types";
 import { Head } from "../components/Head";
 import { TopBar } from "../components/TopBar";
 import { HomeStatsBar } from "../components/pages/home/HomeStatsBar";
 import { HomeMainSection } from "../components/pages/home/HomeMainSection";
 import { SiteFooter } from "../components/SiteFooter";
+import { useFetchGoods } from "../hooks/useFetchGoods";
 
 export default function Home() {
-  const [goods, setGoods] = useState<Good[]>([]);
+  const [goods, isLoading] = useFetchGoods();
   const [selected, setSelected] = useState<number[]>([]);
-
-  const postGood = async () => {
-    await fetch("/api/goods", {
-      method: "POST",
-    });
-  };
-
-  useEffect(() => {
-    const fetchGoods = async () => {
-      const res = await fetch(`/api/goods`);
-      const goods = await res.json();
-      setGoods(goods);
-    };
-
-    fetchGoods();
-  }, []);
 
   const selectItem = (id: number) => {
     if (selected.includes(id)) {
@@ -44,6 +28,7 @@ export default function Home() {
           <HomeStatsBar goods={goods} />
           <div className="flex-grow">
             <HomeMainSection
+              isLoading={isLoading}
               goods={goods}
               selected={selected}
               selectItem={selectItem}

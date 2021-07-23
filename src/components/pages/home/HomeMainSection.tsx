@@ -14,12 +14,14 @@ const filtersInit: GoodsFilterState = {
 };
 
 interface OwnProps {
+  isLoading: boolean;
   goods: Good[];
   selected: number[];
   selectItem: (id: number) => void;
 }
 
 export const HomeMainSection = ({
+  isLoading,
   goods = [],
   selected = [],
   selectItem,
@@ -44,6 +46,7 @@ export const HomeMainSection = ({
       />
       <div className="flex-grow">
         <HomeGoodList
+          isLoading={isLoading}
           goods={filteredGoods}
           selectCategory={(cat) =>
             setFilters((prev) => ({ ...prev, category: cat }))

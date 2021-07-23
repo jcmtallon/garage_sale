@@ -6,19 +6,30 @@ import { Good } from "../../../types";
 import noResultsIcon from "../../../../public/no-results.svg";
 import { GoodCategory } from "../../../constants/goodCategory";
 import { HomeGoodCard } from "./GoodCard/HomeGoodCard";
+import { LoadingSpinner } from "../../LoadingSpinner";
 
 interface OwnProps {
   goods: Good[];
+  isLoading: boolean;
   selectCategory: (cat: GoodCategory) => void;
   selectItem: (id: number) => void;
 }
 
 export const HomeGoodList = ({
   goods,
+  isLoading,
   selectCategory,
   selectItem,
 }: OwnProps) => {
   const { t } = useTranslation();
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-full py-6 flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
 
   if (goods.length === 0) {
     return (
@@ -39,7 +50,7 @@ export const HomeGoodList = ({
   }
 
   return (
-    <div className="grid gird-cols-1 md:grid-cols-2 gap-4 mt-4">
+    <div className="grid gird-cols-1 md:grid-cols-2 gap-4 pt-6">
       {/* TODO: if loading, show loading spinner */}
       {goods.map((good) => (
         <HomeGoodCard

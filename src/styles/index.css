@@ -7,3 +7,34 @@
     @apply overflow-x-hidden;
   }
 }
+
+.loader {
+  -webkit-animation: spinner 0.75s linear infinite;
+  animation: spinner 0.75s linear infinite;
+}
+
+.loader-warning {
+  border-top-color: #fafbaf;
+}
+
+.loader-primary {
+  border-top-color: #4c7941;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
