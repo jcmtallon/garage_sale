@@ -23,7 +23,7 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
   return (
     <Dialog onClose={onClose}>
       <div className="border-0 rounded-lg shadow-lg flex flex-col bg-white w-screen md:w-96 p-4">
-        <div className="flex justify-between">
+        <div className="flex justify-between space-x-2">
           <div className="text-base font-bold text-primary-600">
             {i18n.language === LANG.EN_US ? good.name_en : good.name_jp}
           </div>
@@ -39,7 +39,7 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
             className="rounded bg-gray-50 shadow-inner cursor-pointer"
           />
         </div>
-        <div className="py-2">
+        <div className="py-3 whitespace-pre-wrap">
           {i18n.language === LANG.EN_US
             ? good.description_en
             : good.description_jp}
