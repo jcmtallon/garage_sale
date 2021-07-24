@@ -34,6 +34,12 @@ export type GoodsFilterState = {
   wasAddedLastWeek: boolean;
 };
 
+export type BookFormInput = {
+  name: string;
+  contact: string;
+  comments: string;
+};
+
 // Util Types
 
 export type ConstantValueOption<T> = {

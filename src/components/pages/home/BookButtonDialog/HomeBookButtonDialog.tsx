@@ -1,12 +1,18 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
 import closeIcon from "../../../../../public/close.svg";
-import { Good } from "../../../../types";
+import { BookFormInput, Good } from "../../../../types";
 import { Dialog } from "../../../overlays/Dialog";
 import { HomeBookButtonDialogSummary } from "./HomeBookButtonDialogSummary";
 import { HomeBookButtonDialogForm } from "./HomeBookButtonDialogForm";
+
+const initialState: BookFormInput = {
+  name: "",
+  contact: "",
+  comments: "",
+};
 
 interface OwnProps {
   ids: number[];
@@ -19,6 +25,8 @@ export const HomeBookButtonDialog = ({
   goods = [],
   onClose,
 }: OwnProps) => {
+  const [formInput, setFormInput] = useState(initialState);
+
   const { t, i18n } = useTranslation();
 
   const onCloseButton = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -45,8 +53,11 @@ export const HomeBookButtonDialog = ({
         <div className="pt-4">
           <HomeBookButtonDialogSummary goods={selectedItems} />
         </div>
-        <div>
-          <HomeBookButtonDialogForm />
+        <div className="pt-8">
+          <HomeBookButtonDialogForm
+            input={formInput}
+            onInputChange={(input) => setFormInput(input)}
+          />
         </div>
         <div>Book Selected Items</div>
         <div className="flex flex-col">
