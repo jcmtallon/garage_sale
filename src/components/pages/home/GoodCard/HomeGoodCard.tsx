@@ -82,7 +82,7 @@ export const HomeGoodCard = ({
                 sizeY={data.size_y}
                 sizeZ={data.size_z}
               />
-              <HomeGoodCardDetailsLink />
+              <HomeGoodCardDetailsLink link={data.info_link} />
             </div>
           </div>
 

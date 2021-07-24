@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-
 import { useTranslation } from "react-i18next";
+
 import closeIcon from "../../../../../public/close.svg";
 import { LANG } from "../../../../constants/language";
 import { Good } from "../../../../types";
@@ -36,6 +36,7 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
             src={`https://drive.google.com/uc?export=view&id=${good.image_id}`}
             width={544}
             height={816}
+            alt="Item image"
             className="rounded bg-gray-50 shadow-inner cursor-pointer"
           />
         </div>
