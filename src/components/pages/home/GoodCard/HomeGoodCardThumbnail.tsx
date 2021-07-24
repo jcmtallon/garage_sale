@@ -12,7 +12,8 @@ export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
         layout="fill"
         objectFit="cover"
         alt="Item thumbnail"
-        className="rounded bg-gray-50 shadow-inner cursor-pointer"
+        draggable={false}
+        className="rounded bg-gray-50 shadow-inner cursor-pointer select-none"
       />
     </div>
   );

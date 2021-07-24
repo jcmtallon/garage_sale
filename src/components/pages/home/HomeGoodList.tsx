@@ -39,7 +39,7 @@ export const HomeGoodList = ({
 
   if (isLoading) {
     return (
-      <div className="w-full h-full py-6 flex items-center justify-center">
+      <div className="w-full h-full py-12 flex items-center justify-center">
         <LoadingSpinner />
       </div>
     );
@@ -47,7 +47,7 @@ export const HomeGoodList = ({
 
   if (goods.length === 0) {
     return (
-      <div className="w-full h-full py-6">
+      <div className="w-full h-full py-12">
         <div className="bg-gray-50 w-full h-full border border-gray-200 text-lg md:text-3xl text-gray-300 flex items-center justify-center space-x-2 md:space-x-5 py-4">
           <div className="w-5 h-5 md:w-8 md:h-8 md:pt-1">
             <Image
