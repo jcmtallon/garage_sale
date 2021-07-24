@@ -7,8 +7,6 @@ interface OwnProps {
 export const HomeGoodCardDetailsLink = ({ link }: OwnProps) => {
   const { t } = useTranslation();
 
-  console.log(link);
-
   if (link) {
     return (
       <a className="text-primary-600 underline text-xs" href={link}>
