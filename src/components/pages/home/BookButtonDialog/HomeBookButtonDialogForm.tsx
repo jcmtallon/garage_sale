@@ -51,7 +51,7 @@ export const HomeBookButtonDialogForm = ({
           <textarea
             id={t("bookCard.fieldName.comments")}
             value={input.comments}
-            placeholder={t("bookCard.placeholder.comments")}
+            rows={4}
             className="text-sm placeholder-gray-400 rounded-sm border border-gray-300 appearance-none focus:outline-none focus:border-primary-600"
             onChange={(e) =>
               onInputChange({ ...input, comments: e.target.value })
@@ -75,9 +75,11 @@ const FormFieldWrapper = ({
   description,
 }: FormFieldWrapperProps) => {
   return (
-    <div className="flex space-x-6">
+    <div className="flex flex-col md:flex-row md:space-x-6">
       <div
-        className={`flex flex-col flex-none ${description ? "w-96" : "w-full"}`}
+        className={`flex flex-col flex-none ${
+          description ? "w-full md:w-96" : "w-full"
+        }`}
       >
         <label
           className="text-xs font-bold text-primary-600 pb-0.5"

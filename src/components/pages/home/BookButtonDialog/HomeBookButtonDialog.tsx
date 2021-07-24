@@ -27,7 +27,7 @@ export const HomeBookButtonDialog = ({
 }: OwnProps) => {
   const [formInput, setFormInput] = useState(initialState);
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const onCloseButton = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
@@ -53,7 +53,7 @@ export const HomeBookButtonDialog = ({
         <div className="pt-4">
           <HomeBookButtonDialogSummary goods={selectedItems} />
         </div>
-        <div className="pt-8">
+        <div className="pt-6 md:pt-8">
           <HomeBookButtonDialogForm
             input={formInput}
             onInputChange={(input) => setFormInput(input)}
