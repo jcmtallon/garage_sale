@@ -59,14 +59,14 @@ export const HomeBookButtonDialog = ({
             onInputChange={(input) => setFormInput(input)}
           />
         </div>
-        <div>Book Selected Items</div>
-        <div className="flex flex-col">
-          <div>* It may take us one or two days to contact you. </div>
-          <div>
-            * We will set the selected items as available again if we contact
-            you and we receive no response for several days or you lose interest
-            in the items.{" "}
-          </div>
+        <div className="pt-4">
+          <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded">
+            {t("bookCard.button.bookSelected")}
+          </button>
+        </div>
+        <div className="flex flex-col pt-6 text-xs italic text-gray-600">
+          <div>{t("bookCard.notes.itMayTakeTime")}</div>
+          <div>{t("bookCard.notes.weWillReactivateItems")}</div>
         </div>
       </div>
     </Dialog>
