@@ -59,12 +59,12 @@ export const HomeBookButtonDialog = ({
             onInputChange={(input) => setFormInput(input)}
           />
         </div>
-        <div className="pt-4">
-          <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded">
+        <div className="pt-10 flex justify-center">
+          <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded max-w-xl">
             {t("bookCard.button.bookSelected")}
           </button>
         </div>
-        <div className="flex flex-col pt-6 text-xs italic text-gray-600">
+        <div className="flex flex-col pt-10 text-xs italic text-gray-600">
           <div>{t("bookCard.notes.itMayTakeTime")}</div>
           <div>{t("bookCard.notes.weWillReactivateItems")}</div>
         </div>
