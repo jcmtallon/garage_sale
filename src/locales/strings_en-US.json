@@ -38,6 +38,8 @@
     "bookCard.button.bookSelected": "Book Selected Items",
     "bookCard.notes.itMayTakeTime": "* It may take us one or two days to contact you.",
     "bookCard.notes.weWillReactivateItems": "* We will set the selected items as available again if we contact you and we receive no response for several days or you lose interest in the items.",
+    "bookCard.validation.nameFieldMandatory": "Name field cannot be empty.",
+    "bookCard.validation.contactFieldMandatory": "Contact field cannot be empty.",
     "general.option.all": "All",
     "goodType.free": "Free",
     "goodType.paid": "Paid",

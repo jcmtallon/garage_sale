@@ -1,5 +1,7 @@
 import { google } from "googleapis";
-import { Good } from "../../types";
+import { GOOD_STATUS } from "../../constants/goodStatus";
+import { GOOGLE_SHEET_NAME } from "../../constants/googleSheetName";
+import { Good, GoogleSheetRequestBodyData } from "../../types";
 
 import { getDecryptedCredentials } from "./credentialDecryption";
 import { parseGoodsResponse } from "./parsers";
@@ -11,8 +13,6 @@ import { parseGoodsResponse } from "./parsers";
 const credentials = getDecryptedCredentials();
 
 let gapiClient = null;
-
-const goodsSheetName = "goods";
 
 async function getClient() {
   if (gapiClient !== null) return gapiClient;
@@ -28,24 +28,41 @@ async function getClient() {
   return gapiClient;
 }
 
-export const getGoods = async (): Promise<Good[]> => {
+const fetchSheetData = async (): Promise<any> => {
   const sheets = await getClient();
-  const response = await sheets.spreadsheets.values.get({
+  return await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SHEET_ID,
-    range: goodsSheetName,
+    range: GOOGLE_SHEET_NAME,
   });
+};
 
+export const getGoods = async (): Promise<Good[]> => {
+  const response = await fetchSheetData();
   return parseGoodsResponse(response.data.values);
 };
 
-export const addGood = async () => {
+export const getAlreadyBookedGoods = async (
+  selectedIds: number[]
+): Promise<[Good[], any[]]> => {
+  const response = await fetchSheetData();
+  const goods = parseGoodsResponse(response.data.values);
+
+  const bookedGoods = goods.filter(
+    (good) =>
+      selectedIds.includes(good.id) && good.status !== GOOD_STATUS.AVAILABLE
+  );
+  return [bookedGoods, response.data.values];
+};
+
+export const bookGoods = async (
+  data: GoogleSheetRequestBodyData
+): Promise<any> => {
   const sheets = await getClient();
-  const response = await sheets.spreadsheets.values.append({
+  return await sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: process.env.SHEET_ID,
-    range: "Sheet1!A:B",
-    valueInputOption: "RAW",
     requestBody: {
-      values: [["TestA"], ["TestB"]],
+      valueInputOption: "RAW",
+      data: data,
     },
   });
 };

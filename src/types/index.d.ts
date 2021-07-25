@@ -2,7 +2,7 @@ import { GoodType } from "../constants/goodType";
 import { GoodStatus } from "../constants/goodStatus";
 import { GoodCategory } from "../constants/goodCategory";
 
-// Model Types
+// Api Types
 
 export type Good = {
   id: number;
@@ -24,6 +24,20 @@ export type Good = {
   isSelected?: boolean; //TODO: this belongs to the UI. Maybe better to put together a different type for this.
   booker_name: string; //TODO: might be better not to include the booker info (just the id) in the response for privacy reasons.
 };
+
+export type BookResponse = {
+  alreadyBookedGoods: Good[];
+};
+
+export type BookRequest = {
+  input: BookFormInput;
+  selectedIds: number[];
+};
+
+export type GoogleSheetRequestBodyData = {
+  range: string;
+  values: string[][];
+}[];
 
 // State Types
 

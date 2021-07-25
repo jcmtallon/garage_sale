@@ -7,9 +7,10 @@ import { HomeMainSection } from "../components/pages/home/HomeMainSection";
 import { SiteFooter } from "../components/SiteFooter";
 import { useFetchGoods } from "../hooks/useFetchGoods";
 import { HomeBookButtonDialog } from "../components/pages/home/BookButtonDialog";
+import { BookFormInput } from "../types";
 
 export default function Home() {
-  const [goods, isLoading] = useFetchGoods();
+  const [goods, isLoading, isPosting, fetchGoods, bookGoods] = useFetchGoods();
   const [selected, setSelected] = useState<number[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -18,6 +19,26 @@ export default function Home() {
       setSelected((prev) => prev.filter((val) => val !== id));
     } else {
       setSelected((prev) => [...prev, id]);
+    }
+  };
+
+  const bookItems = async (input: BookFormInput) => {
+    setIsModalOpen(false);
+
+    const request = { input: input, selectedIds: selected };
+    const response = await bookGoods(request);
+
+    fetchGoods();
+
+    if (response.alreadyBookedGoods.length > 0) {
+      alert("TODO: error message");
+
+      const blockedIds = response.alreadyBookedGoods.map((good) => good.id);
+      const newSelected = selected.filter((id) => !blockedIds.includes(id));
+      setSelected(newSelected);
+    } else {
+      alert("TODO: success message")!;
+      setSelected([]);
     }
   };
 
@@ -45,6 +66,7 @@ export default function Home() {
             ids={selected}
             goods={goods}
             onClose={() => setIsModalOpen(false)}
+            onBook={bookItems}
           />
         )}
       </main>

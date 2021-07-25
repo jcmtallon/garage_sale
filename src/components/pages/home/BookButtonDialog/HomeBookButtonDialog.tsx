@@ -18,12 +18,14 @@ interface OwnProps {
   ids: number[];
   goods: Good[];
   onClose: () => void;
+  onBook: (input: BookFormInput) => void;
 }
 
 export const HomeBookButtonDialog = ({
   ids = [],
   goods = [],
   onClose,
+  onBook,
 }: OwnProps) => {
   const [formInput, setFormInput] = useState(initialState);
 
@@ -32,6 +34,20 @@ export const HomeBookButtonDialog = ({
   const onCloseButton = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation();
     onClose();
+  };
+
+  const onBookClick = () => {
+    if (formInput.name === "") {
+      alert(t("bookCard.validation.nameFieldMandatory"));
+      return;
+    }
+
+    if (formInput.contact === "") {
+      alert(t("bookCard.validation.contactFieldMandatory"));
+      return;
+    }
+
+    onBook(formInput);
   };
 
   const selectedItems = useMemo(
@@ -59,7 +75,7 @@ export const HomeBookButtonDialog = ({
             onInputChange={(input) => setFormInput(input)}
           />
         </div>
-        <div className="pt-10 flex justify-center">
+        <div className="pt-10 flex justify-center" onClick={onBookClick}>
           <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded max-w-xl">
             {t("bookCard.button.bookSelected")}
           </button>
