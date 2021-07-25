@@ -44,7 +44,7 @@ export const HomeMainSection = ({
         updateFilters={(value) => setFilters(value)}
         goodsCount={filteredGoods.length}
       />
-      <div className="flex-grow">
+      <div className="flex-grow pt-4">
         <HomeGoodList
           isLoading={isLoading}
           goods={filteredGoods}
