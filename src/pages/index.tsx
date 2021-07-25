@@ -8,11 +8,14 @@ import { SiteFooter } from "../components/SiteFooter";
 import { useFetchGoods } from "../hooks/useFetchGoods";
 import { HomeBookButtonDialog } from "../components/pages/home/BookButtonDialog";
 import { BookFormInput } from "../types";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
   const [goods, isLoading, isPosting, fetchGoods, bookGoods] = useFetchGoods();
   const [selected, setSelected] = useState<number[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { t } = useTranslation();
 
   const selectItem = (id: number) => {
     if (selected.includes(id)) {
@@ -37,8 +40,8 @@ export default function Home() {
       const newSelected = selected.filter((id) => !blockedIds.includes(id));
       setSelected(newSelected);
     } else {
-      alert("TODO: success message")!;
       setSelected([]);
+      alert(t("bookCard.message.itemsBooked"));
     }
   };
 
