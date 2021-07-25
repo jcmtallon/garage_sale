@@ -25,12 +25,10 @@ export const useClickOutsideListenerRef = (onClose: () => void) => {
   );
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
     document.addEventListener("click", clickListener);
     document.addEventListener("keyup", escapeListener);
 
     return () => {
-      document.body.style.overflow = "unset";
       document.removeEventListener("click", clickListener);
       document.removeEventListener("keyup", escapeListener);
     };
