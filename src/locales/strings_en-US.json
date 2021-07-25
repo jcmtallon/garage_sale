@@ -46,7 +46,9 @@
     "goodStatus.available": "Available",
     "goodStatus.reserved": "Booked",
     "goodStatus.given": "Given",
+    "goodCategory.appliances": "Appliances",
     "goodCategory.bathroom": "Bathroom",
+    "goodCategory.furniture": "Furniture",
     "goodCategory.kitchen": "Kitchen",
-    "goodCategory.furniture": "Furniture"
+    "goodCategory.tools": "Tools"
 }

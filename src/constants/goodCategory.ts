@@ -1,7 +1,9 @@
 export const GOOD_CATEGORY = {
-  KITCHEN: "KITCHEN",
-  FURNITURE: "FURNITURE",
+  APPLIANCES: "APPLIANCES",
   BATHROOM: "BATHROOM",
+  FURNITURE: "FURNITURE",
+  KITCHEN: "KITCHEN",
+  TOOLS: "TOOLS",
 } as const;
 
 export type GoodCategory = typeof GOOD_CATEGORY[keyof typeof GOOD_CATEGORY];
