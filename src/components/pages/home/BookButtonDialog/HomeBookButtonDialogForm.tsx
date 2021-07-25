@@ -20,7 +20,9 @@ export const HomeBookButtonDialogForm = ({
       <div className="text-gray-600 pb-1">
         {t("bookCard.desc.pleaseFilTheForm")}
       </div>
-      <form className="bg-primary-50 flex flex-col px-4 md:px-6 py-8 space-y-6">
+      <form className="bg-primary-50 flex flex-col px-4 md:px-6 pb-8 space-y-6">
+        {/* Reference: https://medium.com/paul-jaworski/turning-off-autocomplete-in-chrome-ee3ff8ef0908 */}
+        <input type="hidden" value="something" className="hidden" />
         <FormFieldWrapper
           fieldName={t("bookCard.fieldName.name")}
           description={t("bookCard.desc.name")}
@@ -28,6 +30,7 @@ export const HomeBookButtonDialogForm = ({
           <TextField
             value={input.name}
             id={t("bookCard.fieldName.name")}
+            autoComplete="off"
             placeholder={t("bookCard.placeholder.name")}
             onChange={(e) => onInputChange({ ...input, name: e.target.value })}
           />
@@ -40,6 +43,7 @@ export const HomeBookButtonDialogForm = ({
           <TextField
             id={t("bookCard.fieldName.contact")}
             value={input.contact}
+            autoComplete="off"
             placeholder={t("bookCard.placeholder.contact")}
             onChange={(e) =>
               onInputChange({ ...input, contact: e.target.value })
