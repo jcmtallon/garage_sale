@@ -9,7 +9,12 @@ export const HomeGoodCardDetailsLink = ({ link }: OwnProps) => {
 
   if (link) {
     return (
-      <a className="text-primary-600 underline text-xs" href={link}>
+      <a
+        className="text-primary-600 underline text-xs"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {t("itemCard.link.details")}
       </a>
     );
