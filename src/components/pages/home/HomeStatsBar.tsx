@@ -14,11 +14,11 @@ export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
   const { t } = useTranslation();
 
   const available = useMemo(
-    () => goods.filter((good) => good.status === GOOD_STATUS.RESERVED).length,
+    () => goods.filter((good) => good.status === GOOD_STATUS.AVAILABLE).length,
     [goods]
   );
   const reserved = useMemo(
-    () => goods.filter((good) => good.status === GOOD_STATUS.AVAILABLE).length,
+    () => goods.filter((good) => good.status === GOOD_STATUS.RESERVED).length,
     [goods]
   );
   const given = useMemo(
