@@ -52,7 +52,6 @@ export const HomeListFilters = ({
             selectedValue={filters.type}
           />
         </FilterSlot>
-
         <FilterSlot label={t("goodsFilters.label.status")}>
           <GroupButtons
             buttons={statuses}
@@ -60,7 +59,6 @@ export const HomeListFilters = ({
             selectedValue={filters.status}
           />
         </FilterSlot>
-
         <FilterSlot label={t("goodsFilters.label.category")}>
           <SelectBox
             selectedValud={filters.category}
@@ -77,7 +75,8 @@ export const HomeListFilters = ({
             }
           />
         </FilterSlot>
-        <FilterSlot>
+        {/* TODO: make this feature available from second week after release  */}
+        {/* <FilterSlot>
           <div className="ml-24 md:ml-4">
             <Checkbox
               label={t("goodsFilters.label.addedLastWeek")}
@@ -90,7 +89,7 @@ export const HomeListFilters = ({
               }
             />
           </div>
-        </FilterSlot>
+        </FilterSlot> */}
       </div>
       <div className="hidden md:block mt-4">{goodsCount} items</div>
     </div>
