@@ -7,6 +7,7 @@ export const GOOD_CATEGORY = {
   HOME: "HOME",
   KITCHEN: "KITCHEN",
   LIGHTING: "LIGHTING",
+  OTHER: "OTHER",
   TOOLS: "TOOLS",
 } as const;
 

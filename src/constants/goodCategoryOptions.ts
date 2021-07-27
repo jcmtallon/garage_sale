@@ -10,5 +10,6 @@ export const GOOD_CATEGORY_OPTIONS: ConstantValueOptions<GoodCategory> = [
   { value: GOOD_CATEGORY.HOME, labelKey: "goodCategory.home" },
   { value: GOOD_CATEGORY.KITCHEN, labelKey: "goodCategory.kitchen" },
   { value: GOOD_CATEGORY.LIGHTING, labelKey: "goodCategory.lighting" },
+  { value: GOOD_CATEGORY.OTHER, labelKey: "goodCategory.other" },
   { value: GOOD_CATEGORY.TOOLS, labelKey: "goodCategory.tools" },
 ] as const;
