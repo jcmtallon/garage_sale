@@ -2,17 +2,26 @@ interface OwnProps {
   imageId: string;
 }
 
+// Vercel was throwing 500 errors when fetching external URLs images (might be a image optimization hobby account limit issue).
+// For now we solved the issue by using the img tag instead of nextjs/image.
+
 export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
   return (
-    <div className="relative w-full h-full object-cover">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`https://drive.google.com/uc?export=view&id=${imageId}`}
-        alt="Item thumbnail"
-        draggable={false}
-        loading="lazy"
-        className="rounded bg-gray-50 shadow-inner cursor-pointer select-none"
-      />
+    <div className="relative w-full h-full">
+      <div
+        className="block overflow-hidden absolute box-border m-0"
+        style={{ inset: "0px" }}
+      >
+        <img
+          src={`https://drive.google.com/uc?export=view&id=${imageId}`}
+          alt="Item thumbnail"
+          draggable={false}
+          decoding="async"
+          sizes="100vw"
+          style={{ inset: "0px" }}
+          className="rounded bg-gray-50 shadow-inner cursor-pointer select-none object-cover absolute box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
+        />
+      </div>
     </div>
   );
 };

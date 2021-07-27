@@ -32,10 +32,9 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
           </div>
         </div>
         <div className="relative w-full pt-2">
-          <Image
+          <img
             src={`https://drive.google.com/uc?export=view&id=${good.image_id}`}
-            width={544}
-            height={816}
+            decoding="async"
             alt="Item image"
             className="rounded bg-gray-50 shadow-inner cursor-pointer"
           />
