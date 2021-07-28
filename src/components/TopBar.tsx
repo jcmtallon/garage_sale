@@ -38,7 +38,10 @@ export const TopBar = ({ selected = 1, openBookDialog }: OwnProps) => {
 
           <div className="flex items-center space-x-6 md:space-x-8">
             {/* Language Selector */}
-            <button className="h-8 w-8 p-1" onClick={onLanguageChangeClick}>
+            <button
+              className="h-8 w-8 p-1 active:bg-primary-400"
+              onClick={onLanguageChangeClick}
+            >
               <Image
                 src={i18n.language === LANG.EN_US ? flagUk : flagJapan}
                 alt="Language selector"
