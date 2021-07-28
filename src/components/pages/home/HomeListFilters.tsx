@@ -24,22 +24,28 @@ export const HomeListFilters = ({
   goodsCount = 0,
   updateFilters,
 }: OwnProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const types = useMemo(
     () => getLabeledValueOptionsWithAllOption<GoodType>(GOOD_TYPE_OPTIONS),
-    []
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    [i18n.language]
   );
 
   const statuses = useMemo(
     () => getLabeledValueOptionsWithAllOption<GoodStatus>(GOOD_STATUS_OPTIONS),
-    []
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    [i18n.language]
   );
 
   const categories = useMemo(
     () =>
       getLabeledValueOptionsWithAllOption<GoodCategory>(GOOD_CATEGORY_OPTIONS),
-    []
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    [i18n.language]
   );
 
   return (
