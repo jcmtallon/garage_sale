@@ -10,7 +10,7 @@
     "statBar.label.given": "納品済",
     "statBar.label.untilDate": "{{when}} まで",
     "statBar.label.daysLeft": "(後{{count}}日)",
-    "itemCard.link.details": "詳細へ",
+    "itemCard.link.details": "納品詳細",
     "itemCard.button.select": "カートに入れる",
     "itemCard.button.deselect": "カートから外す",
     "goodsInfoCard.title.helpThem": "Help Juanca and Mariko get rid of their stuff!",

@@ -11,7 +11,7 @@ interface OwnProps {
 export const HomeGoodCardMeasurements = ({ sizeX, sizeY, sizeZ }: OwnProps) => {
   if (sizeX > 0 && sizeY > 0 && sizeZ > 0) {
     return (
-      <div className="flex space-x-1 text-xs text-gray-600">
+      <div className="flex space-x-0.5 md:space-x-1 text-xs text-gray-600">
         <div className="mr-0.5 w-4">
           <Image
             src={rulerIcon}
