@@ -111,9 +111,9 @@ interface FilterSlotProps {
 
 const FilterSlot = ({ label, children }: FilterSlotProps) => {
   return (
-    <div className="flex wrap flex-nowrap items-center space-x-3 mr-6 mt-4">
+    <div className="flex wrap flex-nowrap items-center space-x-3 mr-6 mt-4 text-xs md:text-sm">
       {label && (
-        <div className="w-20 md:w-auto pr-2 md:pr-0 text-right">{label}</div>
+        <div className="w-16 md:w-auto pr-2 md:pr-0 text-right">{label}</div>
       )}
       <div>{children}</div>
     </div>
