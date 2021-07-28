@@ -11,11 +11,13 @@ export const HomeGoodCardCategory = ({
   selectCategory,
 }: OwnProps) => {
   return (
-    <div
-      className="text-xs text-gray-500 hover:text-primary-500 underline cursor-pointer"
-      onClick={() => selectCategory(category)}
-    >
-      {getCategoryLabel(category)}
+    <div className="text-xs text-gray-500 hover:text-primary-500">
+      <span
+        className="underline cursor-pointer"
+        onClick={() => selectCategory(category)}
+      >
+        {getCategoryLabel(category)}
+      </span>
     </div>
   );
 };

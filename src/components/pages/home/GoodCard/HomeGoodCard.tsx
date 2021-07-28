@@ -72,9 +72,9 @@ export const HomeGoodCard = ({
           descriptionJp={data.description_jp}
         />
 
-        <div className="flex justify-between mt-2 flex-grow">
+        <div className="flex justify-between flex-grow">
           {/* Lower Left Side */}
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between pt-2">
             <HomeGoodCardStatusBadge status={data.status} />
             <div>
               <HomeGoodCardMeasurements

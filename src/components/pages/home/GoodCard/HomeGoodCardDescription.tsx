@@ -14,7 +14,7 @@ export const HomeGoodCardDescription = ({
   const { i18n } = useTranslation();
 
   return (
-    <div className="text-xs pt-2 whitespace-pre-wrap line-clamp-3">
+    <div className="text-xs pt-1 whitespace-pre-wrap line-clamp-3">
       {i18n.language === LANG.EN_US ? descriptionEn : descriptionJp}
     </div>
   );
