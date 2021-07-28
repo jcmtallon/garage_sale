@@ -33,7 +33,7 @@ export const HomeGoodCardDialog = ({ good, onClose }: OwnProps) => {
         </div>
         <div className="relative w-full pt-2">
           <img
-            src={`https://drive.google.com/uc?export=view&id=${good.image_id}`}
+            src={good.image_url}
             decoding="async"
             alt="Item image"
             className="rounded bg-gray-50 shadow-inner cursor-pointer"

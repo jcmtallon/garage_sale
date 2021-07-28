@@ -9,7 +9,7 @@ enum GoodDbPropName {
   "name_jp",
   "description_en",
   "description_jp",
-  "image_id",
+  "image_url",
   "info_link",
   "category",
   "status",

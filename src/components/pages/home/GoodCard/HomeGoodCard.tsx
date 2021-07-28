@@ -53,7 +53,7 @@ export const HomeGoodCard = ({
         onClick={() => openModal(data)}
         className="flex-none w-28 md:w-32 h-full"
       >
-        <HomeGoodCardThumbnail imageId={data.image_id} />
+        <HomeGoodCardThumbnail imageUrl={data.image_url} />
       </div>
 
       {/* Card Right Side */}

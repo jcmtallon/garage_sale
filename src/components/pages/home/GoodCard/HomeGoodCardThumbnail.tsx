@@ -1,11 +1,11 @@
 interface OwnProps {
-  imageId: string;
+  imageUrl: string;
 }
 
 // Vercel was throwing 500 errors when fetching external URLs images (might be a image optimization hobby account limit issue).
 // For now we solved the issue by using the img tag instead of nextjs/image.
 
-export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
+export const HomeGoodCardThumbnail = ({ imageUrl }: OwnProps) => {
   return (
     <div className="relative w-full h-full">
       <div
@@ -13,8 +13,7 @@ export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
         style={{ inset: "0px" }}
       >
         <img
-          src={"https://iili.io/AM7d91.md.jpg"}
-          // src={`https://drive.google.com/uc?export=view&id=${imageId}`}
+          src={imageUrl}
           alt="Item thumbnail"
           draggable={false}
           decoding="async"

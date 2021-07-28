@@ -11,7 +11,7 @@ export type Good = {
   name_jp: string;
   description_en: string;
   description_jp: string;
-  image_id: string;
+  image_url: string;
   info_link: string;
   category: GoodCategory;
   status: GoodStatus;
