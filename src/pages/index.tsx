@@ -10,13 +10,14 @@ import { useFetchGoods } from "../hooks/useFetchGoods";
 import { HomeBookButtonDialog } from "../components/pages/home/BookButtonDialog";
 import { BookFormInput } from "../types";
 import { Backdrop } from "../components/Backdrop";
+import { LANG } from "../constants/language";
 
 export default function Home() {
   const [goods, isLoading, isPosting, fetchGoods, bookGoods] = useFetchGoods();
   const [selected, setSelected] = useState<number[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const selectItem = (id: number) => {
     if (selected.includes(id)) {
@@ -35,11 +36,33 @@ export default function Home() {
     fetchGoods();
 
     if (response.alreadyBookedGoods.length > 0) {
-      alert("TODO: error message");
-
       const blockedIds = response.alreadyBookedGoods.map((good) => good.id);
       const newSelected = selected.filter((id) => !blockedIds.includes(id));
       setSelected(newSelected);
+
+      //TODO: Make this code more readable (avoid nesting, extract to a hook or something)
+      const selectedItemNames = goods
+        .filter((good) => blockedIds.includes(good.id))
+        .map((good) =>
+          i18n.language === LANG.EN_US ? good.name_en : good.name_jp
+        )
+        .join(", ");
+
+      if (newSelected.length > 0) {
+        alert(
+          t("bookDialog.message.itemsAlreadyBooked1", {
+            items: selectedItemNames,
+          })
+        );
+      } else {
+        if (newSelected.length > 0) {
+          alert(
+            t("bookDialog.message.itemsAlreadyBooked2", {
+              items: selectedItemNames,
+            })
+          );
+        }
+      }
     } else {
       setSelected([]);
       alert(t("bookDialog.message.itemsBooked"));

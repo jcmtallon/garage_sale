@@ -45,6 +45,8 @@
     "bookDialog.validation.nameFieldMandatory": "Name field cannot be empty.",
     "bookDialog.validation.contactFieldMandatory": "Contact field cannot be empty.",
     "bookDialog.message.itemsBooked": "The selected items have been successfully reserved for you. We will contact you soon to arrange the details! Thanks.",
+    "bookDialog.message.itemsAlreadyBooked1": "Sorry, your booking was not completed because the item(s) listed bellow were booked by someone else in the last few seconds.\n\n- {{items}}\n\nThe listed item(s) have been removed from your selection. Please, try booking again.",
+    "bookDialog.message.itemsAlreadyBooked2": "Sorry, your booking was not completed because the item(s) listed bellow were booked by someone else in the last few seconds.\n\n- {{items}}\n\nPlease try booking different items.",
     "general.option.all": "All",
     "goodType.free": "Free",
     "goodType.paid": "Paid",
