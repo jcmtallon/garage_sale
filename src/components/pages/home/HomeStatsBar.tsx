@@ -36,7 +36,7 @@ export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
   return (
     <div className="pt-12 md:pt-14 bg-gray-100 w-screen">
       <div className="px-2 md:px-6 max-w-screen-xl m-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex h-8 justify-between items-center">
           <div className="flex space-x-3 md:space-x-6">
             <StatLabel
               count={available}
@@ -77,7 +77,7 @@ interface StatLabelProps {
 
 const StatLabel = ({ count = 0, text, textShort }: StatLabelProps) => {
   return (
-    <div className="flex items-end space-x-1 md:space-x-1.5 text-gray-800">
+    <div className="flex items-end space-x-1.5 text-gray-800">
       <div className="text-lg font-bold text-primary-600">{count}</div>
 
       {/* Desktop Label */}
