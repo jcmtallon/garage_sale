@@ -44,7 +44,7 @@
     "bookDialog.notes.weWillReactivateItems": "* We will set the selected items as available again if we contact you and we receive no response for several days or you lose interest in the items.",
     "bookDialog.validation.nameFieldMandatory": "Name field cannot be empty.",
     "bookDialog.validation.contactFieldMandatory": "Contact field cannot be empty.",
-    "bookDialog.message.itemsBooked": "Your selected items have been successfully reserved for you. We will contact you soon to arrange the details! Thanks.",
+    "bookDialog.message.itemsBooked": "The selected items have been successfully reserved for you. We will contact you soon to arrange the details! Thanks.",
     "general.option.all": "All",
     "goodType.free": "Free",
     "goodType.paid": "Paid",

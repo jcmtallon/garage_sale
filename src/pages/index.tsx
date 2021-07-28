@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Head } from "../components/Head";
 import { TopBar } from "../components/TopBar";
@@ -8,7 +9,7 @@ import { SiteFooter } from "../components/SiteFooter";
 import { useFetchGoods } from "../hooks/useFetchGoods";
 import { HomeBookButtonDialog } from "../components/pages/home/BookButtonDialog";
 import { BookFormInput } from "../types";
-import { useTranslation } from "react-i18next";
+import { Backdrop } from "../components/Backdrop";
 
 export default function Home() {
   const [goods, isLoading, isPosting, fetchGoods, bookGoods] = useFetchGoods();
@@ -72,6 +73,7 @@ export default function Home() {
             onBook={bookItems}
           />
         )}
+        {isPosting && <Backdrop />}
       </main>
       <SiteFooter />
     </div>

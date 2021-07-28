@@ -7,7 +7,7 @@ interface OwnProps {
 
 const colors = {
   primary: { className: "loader-primary", border: "border-gray-200" },
-  warning: { className: "loader-warning", border: "border-yellow-400" },
+  warning: { className: "loader-warning", border: "border-gray-100" },
 };
 
 const sizes = {
