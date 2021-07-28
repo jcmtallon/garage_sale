@@ -1,6 +1,5 @@
 {
     "topBar.label.itemsSelected": "{{count}} 個選択済み",
-    "topBar.label.selected": "{{count}} 個選択済み",
     "topBar.botton.bookSelected": "選択アイテムを予約する",
     "topBar.botton.book": "選択を予約する",
     "statBar.label.itemsAvailable": "入手可能なアイテム",

@@ -5,6 +5,7 @@ import logoMd from "../../public/logo_md.svg";
 import logo from "../../public/logo.svg";
 import flagUk from "../../public/flag_uk.png";
 import flagJapan from "../../public/flag_japan.png";
+import cart from "../../public/cart.svg";
 
 import { SecondaryButton } from "./elements/SecondaryButton";
 import { LANG } from "../constants/language";
@@ -35,27 +36,33 @@ export const TopBar = ({ selected = 1, openBookDialog }: OwnProps) => {
             <Image src={logo} alt="Garage Sale Logo" />
           </div>
 
-          <div className="flex items-center space-x-3 md:space-x-6">
+          <div className="flex items-center space-x-6 md:space-x-8">
             {/* Language Selector */}
-            <button
-              className="h-8 w-8 hover:bg-primary-400 p-1"
-              onClick={onLanguageChangeClick}
-            >
+            <button className="h-8 w-8 p-1" onClick={onLanguageChangeClick}>
               <Image
                 src={i18n.language === LANG.EN_US ? flagUk : flagJapan}
-                alt="Spanish Language"
+                alt="Language selector"
                 className="rounded-full"
+                draggable={false}
               />
             </button>
 
             {/* Desktop counter */}
-            <div className="hidden md:block text-primary-50">
-              {t("topBar.label.itemsSelected", { count: selected })}
+            <div className="hidden md:flex md:space-x-2.5 text-primary-50">
+              <div className="w-5">
+                <Image src={cart} alt="Cart" />
+              </div>
+              <span>
+                {t("topBar.label.itemsSelected", { count: selected })}
+              </span>
             </div>
 
             {/* Mobile counter */}
-            <div className="block md:hidden text-primary-50">
-              {t("topBar.label.selected", { count: selected })}
+            <div className="flex space-x-2 md:hidden text-primary-50">
+              <span className="text-base text-primary-100">{selected}</span>
+              <div className="w-5 pt-0.5">
+                <Image src={cart} alt="Cart" />
+              </div>
             </div>
 
             {/* Desktop button */}
