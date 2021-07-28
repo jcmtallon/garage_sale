@@ -97,7 +97,9 @@ export const HomeListFilters = ({
           </div>
         </FilterSlot> */}
       </div>
-      <div className="hidden md:block mt-4">{goodsCount} items</div>
+      <div className="hidden md:block mt-4">
+        {t("goodsFilters.label.itemCounter", { count: goodsCount })}
+      </div>
     </div>
   );
 };
