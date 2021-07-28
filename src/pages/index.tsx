@@ -41,7 +41,7 @@ export default function Home() {
       setSelected(newSelected);
     } else {
       setSelected([]);
-      alert(t("bookCard.message.itemsBooked"));
+      alert(t("bookDialog.message.itemsBooked"));
     }
   };
 

@@ -33,13 +33,13 @@ export const HomeBookButtonDialogSummary = ({ goods = [] }: OwnProps) => {
     <div className="border border-gray-300 p-4 md:p-6 flex flex-col space-y-6">
       <div className="flex flex-col md:flex-row">
         <div className="text-primary-600 font-bold w-40 md:text-right pr-8 flex-none">
-          {t("bookCard.label.selectedItems")}
+          {t("bookDialog.label.selectedItems")}
         </div>
         <div className="pt-2 md:pt-0">{productNames}</div>
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="text-primary-600 font-bold w-40 md:text-right pr-8 flex-none">
-          {t("bookCard.label.totalPrice")}
+          {t("bookDialog.label.totalPrice")}
         </div>
         <div className="pt-2 md:pt-0">{totalPrice}</div>
       </div>

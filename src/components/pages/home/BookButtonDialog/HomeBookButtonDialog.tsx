@@ -38,12 +38,12 @@ export const HomeBookButtonDialog = ({
 
   const onBookClick = () => {
     if (formInput.name === "") {
-      alert(t("bookCard.validation.nameFieldMandatory"));
+      alert(t("bookDialog.validation.nameFieldMandatory"));
       return;
     }
 
     if (formInput.contact === "") {
-      alert(t("bookCard.validation.contactFieldMandatory"));
+      alert(t("bookDialog.validation.contactFieldMandatory"));
       return;
     }
 
@@ -60,7 +60,7 @@ export const HomeBookButtonDialog = ({
       <div className="border-0 rounded-lg shadow-lg flex flex-col bg-white w-screen max-w-screen-lg p-4 md:p-8">
         <div className="flex justify-between space-x-2">
           <div className="text-lg font-bold text-primary-600">
-            {t("bookCard.title.youAreAbout", { count: selectedItems.length })}
+            {t("bookDialog.title.youAreAbout", { count: selectedItems.length })}
           </div>
           <div className="w-3 cursor-pointer" onClick={onCloseButton}>
             <Image src={closeIcon} width={240} height={240} alt="Close icon" />
@@ -77,12 +77,12 @@ export const HomeBookButtonDialog = ({
         </div>
         <div className="pt-10 flex justify-center" onClick={onBookClick}>
           <button className="bg-primary-600 hover:bg-primary-500 active:bg-primary-400 text-white text-base py-1.5 w-full rounded max-w-xl">
-            {t("bookCard.button.bookSelected")}
+            {t("bookDialog.button.bookSelected")}
           </button>
         </div>
         <div className="flex flex-col pt-10 text-xs italic text-gray-600">
-          <div>{t("bookCard.notes.itMayTakeTime")}</div>
-          <div>{t("bookCard.notes.weWillReactivateItems")}</div>
+          <div>{t("bookDialog.notes.itMayTakeTime")}</div>
+          <div>{t("bookDialog.notes.weWillReactivateItems")}</div>
         </div>
       </div>
     </Dialog>

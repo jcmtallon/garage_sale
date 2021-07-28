@@ -18,42 +18,42 @@ export const HomeBookButtonDialogForm = ({
   return (
     <div className="flex flex-col">
       <div className="text-gray-600 pb-1">
-        {t("bookCard.desc.pleaseFilTheForm")}
+        {t("bookDialog.desc.pleaseFilTheForm")}
       </div>
       <form className="bg-primary-50 flex flex-col px-4 md:px-6 pb-8 space-y-6">
         {/* Reference: https://medium.com/paul-jaworski/turning-off-autocomplete-in-chrome-ee3ff8ef0908 */}
         <input type="hidden" value="something" className="hidden" />
         <FormFieldWrapper
-          fieldName={t("bookCard.fieldName.name")}
-          description={t("bookCard.desc.name")}
+          fieldName={t("bookDialog.fieldName.name")}
+          description={t("bookDialog.desc.name")}
         >
           <TextField
             value={input.name}
-            id={t("bookCard.fieldName.name")}
+            id={t("bookDialog.fieldName.name")}
             autoComplete="off"
-            placeholder={t("bookCard.placeholder.name")}
+            placeholder={t("bookDialog.placeholder.name")}
             onChange={(e) => onInputChange({ ...input, name: e.target.value })}
           />
         </FormFieldWrapper>
 
         <FormFieldWrapper
-          fieldName={t("bookCard.fieldName.contact")}
-          description={t("bookCard.desc.contact")}
+          fieldName={t("bookDialog.fieldName.contact")}
+          description={t("bookDialog.desc.contact")}
         >
           <TextField
-            id={t("bookCard.fieldName.contact")}
+            id={t("bookDialog.fieldName.contact")}
             value={input.contact}
             autoComplete="off"
-            placeholder={t("bookCard.placeholder.contact")}
+            placeholder={t("bookDialog.placeholder.contact")}
             onChange={(e) =>
               onInputChange({ ...input, contact: e.target.value })
             }
           />
         </FormFieldWrapper>
 
-        <FormFieldWrapper fieldName={t("bookCard.fieldName.comments")}>
+        <FormFieldWrapper fieldName={t("bookDialog.fieldName.comments")}>
           <textarea
-            id={t("bookCard.fieldName.comments")}
+            id={t("bookDialog.fieldName.comments")}
             value={input.comments}
             rows={4}
             className="text-sm placeholder-gray-400 rounded-sm border border-gray-300 appearance-none focus:outline-none focus:border-primary-600"
