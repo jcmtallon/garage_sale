@@ -13,7 +13,8 @@ export const HomeGoodCardThumbnail = ({ imageId }: OwnProps) => {
         style={{ inset: "0px" }}
       >
         <img
-          src={`https://drive.google.com/uc?export=view&id=${imageId}`}
+          src={"https://iili.io/AM7d91.md.jpg"}
+          // src={`https://drive.google.com/uc?export=view&id=${imageId}`}
           alt="Item thumbnail"
           draggable={false}
           decoding="async"
