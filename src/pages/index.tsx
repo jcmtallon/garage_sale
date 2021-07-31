@@ -78,7 +78,7 @@ export default function Home() {
           openBookDialog={() => setIsModalOpen(true)}
         />
         <div className="h-full flex flex-col">
-          <HomeStatsBar goods={goods} />
+          <HomeStatsBar goods={goods} isLoading={isLoading} />
           <div className="flex-grow">
             <HomeMainSection
               isLoading={isLoading}

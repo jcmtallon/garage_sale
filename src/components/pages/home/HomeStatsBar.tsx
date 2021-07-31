@@ -8,9 +8,10 @@ import { getDistanceInDays } from "../../../utils/dateUtils";
 
 interface OwnProps {
   goods: Good[];
+  isLoading: boolean;
 }
 
-export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
+export const HomeStatsBar = ({ goods = [], isLoading = false }: OwnProps) => {
   const { t } = useTranslation();
 
   const available = useMemo(
@@ -37,23 +38,27 @@ export const HomeStatsBar = ({ goods = [] }: OwnProps) => {
     <div className="pt-12 md:pt-14 bg-gray-100 w-screen">
       <div className="px-2 md:px-6 max-w-screen-xl m-auto">
         <div className="flex h-8 justify-between items-center">
-          <div className="flex space-x-3 md:space-x-6">
-            <StatLabel
-              count={available}
-              text={t("statBar.label.itemsAvailable")}
-              textShort={t("statBar.label.available")}
-            />
-            <StatLabel
-              count={reserved}
-              text={t("statBar.label.itemsBooked")}
-              textShort={t("statBar.label.booked")}
-            />
-            <StatLabel
-              count={given}
-              text={t("statBar.label.itemsGiven")}
-              textShort={t("statBar.label.given")}
-            />
-          </div>
+          {isLoading ? (
+            <div className="text-gray-700">Loading stats...</div>
+          ) : (
+            <div className="flex space-x-3 md:space-x-6">
+              <StatLabel
+                count={available}
+                text={t("statBar.label.itemsAvailable")}
+                textShort={t("statBar.label.available")}
+              />
+              <StatLabel
+                count={reserved}
+                text={t("statBar.label.itemsBooked")}
+                textShort={t("statBar.label.booked")}
+              />
+              <StatLabel
+                count={given}
+                text={t("statBar.label.itemsGiven")}
+                textShort={t("statBar.label.given")}
+              />
+            </div>
+          )}
           <div className="flex items-end space-x-2 text-gray-800">
             <div className="text-xs pb-0.5 hidden md:block">
               {t("statBar.label.untilDate", {
