@@ -38,7 +38,7 @@ export const HomeGoodCard = ({
     }
 
     if (data.status === GOOD_STATUS.GIVEN) {
-      return "border-gray-300 bg-gray-300 opacity-20";
+      return "border-gray-300 bg-gray-300 opacity-40";
     }
 
     return "border-gray-300";
@@ -53,7 +53,10 @@ export const HomeGoodCard = ({
         onClick={() => openModal(data)}
         className="flex-none w-28 md:w-32 h-full"
       >
-        <HomeGoodCardThumbnail imageUrl={data.image_url} />
+        <HomeGoodCardThumbnail
+          imageUrl={data.image_url}
+          isGiven={data.status === GOOD_STATUS.GIVEN}
+        />
       </div>
 
       {/* Card Right Side */}
@@ -61,6 +64,7 @@ export const HomeGoodCard = ({
         <HomeGooodCardTitle
           nameEn={data.name_en}
           nameJp={data.name_jp}
+          isGiven={data.status === GOOD_STATUS.GIVEN}
           onClick={() => openModal(data)}
         />
         <HomeGoodCardCategory
@@ -88,10 +92,12 @@ export const HomeGoodCard = ({
 
           {/* Lower Right Side */}
           <div className="flex flex-col items-end justify-end space-y-2">
-            <HomeGoodCardPrice
-              priceNow={data.price_now}
-              priceOriginal={data.price_original}
-            />
+            {data.status !== GOOD_STATUS.GIVEN && (
+              <HomeGoodCardPrice
+                priceNow={data.price_now}
+                priceOriginal={data.price_original}
+              />
+            )}
             {data.status === GOOD_STATUS.AVAILABLE && (
               <HomeGoodCardSelectButton
                 id={data.id}
