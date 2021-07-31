@@ -19,7 +19,6 @@ enum GoodDbPropName {
   "size_y",
   "size_z",
   "public",
-  "booker_name",
 }
 
 export const parseGoodsResponse = (values: any[]): Good[] => {
