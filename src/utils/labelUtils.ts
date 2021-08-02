@@ -27,8 +27,9 @@ export const getLabeledValueOptionsWithAllOption = <T>(
 export const getCategoryLabel = (category: GoodCategory) => {
   const labelKey = GOOD_CATEGORY_OPTIONS.find(
     (opt) => opt.value === category
-  ).labelKey;
-  return i18n.t(labelKey);
+  )?.labelKey;
+
+  return labelKey ? i18n.t(labelKey) : category;
 };
 
 export const getGoodStatusLabel = (status: GoodStatus) => {
