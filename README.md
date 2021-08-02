@@ -22,6 +22,8 @@ After you create a spreadsheet you will need to `authenticate the Google Api` to
 
 - Due to some Vercel Hobby account limitations, different to the above tutorial, we didn't use a `secrets.json` file for the authentication credentials. Instead we used the decryption method explained in this [article](https://leerob.io/blog/vercel-env-variables-size-limit).
 
+You can see which are the environment variables that this app uses checking the file `/.env.local(sample)`.
+
 ### Installation
 
 1. Install NPM packages
@@ -67,3 +69,5 @@ The UI has a responsive design so it can be displayed in smartphones and other d
 The app was designed so it can be deployed on a Vercel Hobby account using continous integration and serverless functions to integrate with the Google Sheets spreadsheet.
 
 Once you setup Vercel and integrate it with your Github account, deploying the app is as simple as pushing your code to one of your branches.
+
+Finally, you must also register the same environment variables contained in your `/.env.local` file in the admin page of your Vercel project.
