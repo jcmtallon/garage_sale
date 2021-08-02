@@ -23,7 +23,7 @@ export const HomeGoodCardThumbnail = ({
           decoding="async"
           sizes="100vw"
           style={{ inset: "0px" }}
-          className={`rounded bg-gray-50 shadow-inner cursor-pointer select-none absolute box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full ${
+          className={`rounded bg-gray-50 shadow-inner cursor-pointer select-none object-cover absolute box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full ${
             isGiven ? "filter grayscale" : ""
           }`}
         />

@@ -46,7 +46,7 @@ export const HomeGoodCard = ({
 
   return (
     <div
-      className={`border rounded h-52 md:h-56 p-1.5 md:p-3.5 flex flex-none ${getCardStyles()}`}
+      className={`border rounded h-56 p-1.5 md:p-3.5 flex flex-none ${getCardStyles()}`}
     >
       {/* Card Left Side */}
       <div
