@@ -1,4 +1,4 @@
-import { Constant, createConstant } from '@jcmtallon/ts-utils'
+import { Constant, createConstant } from '@jcmtallon/ts-allies'
 
 export const GOOD_CATEGORY = createConstant([
   'APPLIANCES',

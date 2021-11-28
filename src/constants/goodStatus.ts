@@ -1,7 +1,9 @@
-export const GOOD_STATUS = {
-  AVAILABLE: "AVAILABLE",
-  RESERVED: "RESERVED",
-  GIVEN: "GIVEN",
-} as const;
+import { Constant, createConstant } from '@jcmtallon/ts-allies'
 
-export type GoodStatus = typeof GOOD_STATUS[keyof typeof GOOD_STATUS];
+export const GOOD_STATUS = createConstant([
+  'AVAILABLE',
+  'RESERVED',
+  'GIVEN',
+]);
+
+export type GoodStatus = Constant<typeof GOOD_STATUS>
